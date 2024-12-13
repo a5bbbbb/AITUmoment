@@ -1,0 +1,1 @@
+truncate educational_programs;

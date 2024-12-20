@@ -5,28 +5,90 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/htmx.org/dist/ext/path-params.js"></script>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                font-size: 1.2em;
+            }
+            th, td {
+                padding: 10px;
+            }
+        </style>
     </head>
-    <body>
-        <h1>Hello, {{ .name }}!</h1>
-        <br>
-        <h2>This our userbase:</h2>
+    <body hx-ext="path-params">
+        <h2>This is the output</h2>
 
-        <ul id="users">
+        <table id="users">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Education program</th>
+            </tr>
             {{range .users}}
             {{template "user.html" .}}
             {{else}}
-            <li id="user-elem" hx-swap-oob="true">No users yet</li>
+            <td id="user-elem" hx-swap-oob="true">No users yet</td>
             {{end}}
-        </ul>
+        </table>
+        <button hx-get="/" hx-target="body">Get all users</button>
+        <h2>Add user to the database</h2>
         <form 
             hx-post="/users"
             hx-target="#users"
             hx-swap="beforeend">
-            <input type="text" name="username">
+            <label for="username">username:</label>
+            <input type="text" name="username"><br>
+            <label for="educational_program">educational program:</label>
             <input type="text" name="educational_program">
             <button>Save</button>
         </form>
-
+        <h2>Get user in the database</h2>
+        <form 
+            hx-get="/users/{id}"
+            hx-target="#users"
+            hx-vals="{'id': id}"
+            hx-swap="innerHTML">
+            <label for="id">user id:</label>
+            <input type="text" name="id">
+            <button>Get</button>
+        </form>
+        <h2>Update user in the database</h2>
+        <form 
+            hx-put="/users/{id}"
+            hx-target="#users"
+            hx-vals="{'id': id}"
+            hx-swap="innerHTML">
+            <label for="id">user id:</label>
+            <input type="text" name="id"><br>
+            <label for="username">New username:</label>
+            <input type="text" name="username"><br>
+            <label for="educational_program">New educational program:</label>
+            <input type="text" name="educational_program">
+            <button>Save</button>
+        </form>
+        <h2>Delete user in the database</h2>
+        <form 
+            hx-delete="/users/{id}"
+            hx-target="#users"
+            hx-vals="{'id': id}"
+            hx-swap="none">
+            <label for="id">user id:</label>
+            <input type="text" name="id">
+            <button>Delete</button>
+        </form>
+        <script>
+            document.body.addEventListener('htmx:responseError', function(evt) {
+                alert(JSON.parse(evt.detail.xhr.response).message);
+            });
+            document.body.addEventListener('htmx:afterRequest', function(evt) {
+                const url = evt.detail.requestConfig.path;
+                const method = evt.detail.requestConfig.verb;
+                if(method == "delete" && (new RegExp("\/users\/[0-9]+")).test(url))
+                    alert(JSON.parse(evt.detail.xhr.response).message);
+            });
+        </script>
     </body>
 </html>
 

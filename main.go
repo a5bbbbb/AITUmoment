@@ -1,15 +1,14 @@
 package main
 
 import (
-	"fmt"
 	"log"
-	"net/http"
-	"strconv"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
 
 	"aitu-moment/db"
+	"aitu-moment/db/repository"
+	"aitu-moment/handlers"
 	"aitu-moment/models"
 )
 
@@ -23,33 +22,31 @@ func main() {
 	e := gin.Default()
 	e.LoadHTMLGlob("templates/*")
 
-	e.GET("/", func(c *gin.Context) {
-		users := tryGet(*databaseConnection)
-		c.HTML(http.StatusOK, "index.html", gin.H{
-			"name":  "Awesome",
-			"users": users,
-		})
-	})
+	userRepo := repository.NewUserRepository(databaseConnection.GetDB())
+	userHandler := handlers.NewUserHandler(userRepo)
+	e.GET("/", userHandler.GetHome)
 
-	e.POST("/users", func(c *gin.Context) {
-		edu_prog_int := c.PostForm("educational_program")
-		educational_program_int, _ := strconv.Atoi(edu_prog_int)
+	// e.POST("/users", func(c *gin.Context) {
+	// 	edu_prog_int := c.PostForm("educational_program")
+	// 	educational_program_int, _ := strconv.Atoi(edu_prog_int)
+	//
+	// 	user := models.User{
+	// 		Name:               c.PostForm("username"),
+	// 		EducationalProgram: uint8(educational_program_int),
+	// 		Program_name:       "",
+	// 	}
+	// 	id, err := trySaveUser(*databaseConnection, user)
+	// 	if err != nil {
+	// 		fmt.Println(err.Error())
+	// 	}
+	// 	user = *tryGetOne(*databaseConnection, id)
+	// 	c.HTML(http.StatusOK, "user.html", gin.H{
+	// 		"Name":         user.Name,
+	// 		"Program_name": user.Program_name,
+	// 	})
+	// })
 
-		user := models.User{
-			Name:               c.PostForm("username"),
-			EducationalProgram: uint8(educational_program_int),
-			Program_name:       "",
-		}
-		id, err := trySaveUser(*databaseConnection, user)
-		if err != nil {
-			fmt.Println(err.Error())
-		}
-		user = *tryGetOne(*databaseConnection, id)
-		c.HTML(http.StatusOK, "user.html", gin.H{
-			"Name":         user.Name,
-			"Program_name": user.Program_name,
-		})
-	})
+	e.POST("/users", userHandler.SaveUser)
 
 	e.Run(":8080")
 }

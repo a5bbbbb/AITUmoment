@@ -28,7 +28,7 @@ type ThreadHandler struct {
 }
 
 func NewThreadHandler(repo *repository.ThreadRepository) *ThreadHandler {
-	initThreadHandler()
+	//initThreadHandler()
 	return &ThreadHandler{repo: repo}
 }
 
@@ -59,9 +59,15 @@ func (h *ThreadHandler) CreateThread(c *gin.Context) {
 	})
 	log.Info("Received request")
 	creatorId, err := strconv.Atoi(c.PostForm("creator_id"))
+	if err != nil {
+		log.Error("Error converting creator_id to int: ", err, "error response")
+	}
 	parentThreadId, err := strconv.Atoi(c.PostForm("parent_thread_id"))
+	if err != nil {
+		log.Error("Error converting parent_thread_id to int: ", err, "error response")
+	}
 	thread := models.Thread{
-		ThreadId:       int(creatorId),
+		CreatorId:      int(creatorId),
 		Content:        c.PostForm("content"),
 		ParentThreadId: int(parentThreadId),
 	}

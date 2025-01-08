@@ -25,9 +25,14 @@ func main() {
 	e.LoadHTMLGlob("templates/*")
 
 	userRepo := repository.NewUserRepository(databaseConnection.GetDB())
+	threadRepo := repository.NewThreadRepository(databaseConnection.GetDB())
 	userHandler := handlers.NewUserHandler(userRepo)
+	threadHandler := handlers.NewThreadHandler(threadRepo)
+
 	e.GET("/", userHandler.GetHome)
 	e.POST("/users", userHandler.SaveUser)
+	e.GET("/threads", threadHandler.GetThreads)
+	e.POST("/threads", threadHandler.CreateThread)
 
 	e.Run(":8080")
 }

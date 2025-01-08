@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/htmx-ext-response-targets@2.0.0/response-targets.js"></script>
+    </head>
+
+    <script>
+        document.addEventListener('htmx:responseError', (event) => {
+            const errorElement = document.getElementById('error');
+            let response = event.detail.xhr.response;
+            let body = response ? response : `Request failed: ${event.detail.xhr.statusText}`;
+            htmx.swap(errorElement, body, { swapStyle: "innerHTML" });
+        });
+    </script>
+
+
+    <body>
+        <br>
+        <h2>These are our threads:</h2>
+
+        <ul id="threads">
+            {{range .threads}}
+            {{template "thread.html" .}}
+            {{else}}
+            <li id="user-elem" hx-swap-oob="true">No threads yet</li>
+            {{end}}
+        </ul>
+        <form 
+            hx-post="/threads"
+            hx-target="#threads"
+            hx-swap="beforeend">
+            <label for="creator_id">Enter creator id: </label>
+            <input type="number" name="creator_id"><br>
+            <label for="content">content: </label>
+            <input type="text" name="content"><br>
+            <label for="parent_thread_id">Thread id</label>
+            <input type="number" name="parent_thread_id">
+            <button>Save</button>
+        </form>
+
+        <!-- Error Message Container -->
+        <div id="error" style="color: red;"></div>
+
+    </body>
+</html>
+
+
+
+
+

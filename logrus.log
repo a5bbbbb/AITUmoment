@@ -1,0 +1,34 @@
+time="2025-01-08T13:47:28+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T14:14:54+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T14:18:11+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T14:19:20+05:00" level=info msg="HOW ARE YOU"
+time="2025-01-08T14:19:20+05:00" level=info msg="HEY YOUUUUUU" fields.msg="I AM HER"
+time="2025-01-08T14:19:20+05:00" level=fatal msg="failed to set From address: failed to parse mail address \"\": mail: no address"
+time="2025-01-08T14:21:49+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T14:22:14+05:00" level=info msg=bronnikov.serafim@bk.ru
+time="2025-01-08T14:22:16+05:00" level=fatal msg="failed to send mail: dial failed: SMTP AUTH failed: 535 5.7.0 Invalid credentials"
+time="2025-01-08T14:36:08+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T14:36:29+05:00" level=info msg=bronnikov.serafim@bk.ru
+time="2025-01-08T14:36:31+05:00" level=fatal msg="failed to send mail: dial failed: SMTP AUTH failed: 535 5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 38308e7fff4ca-3045b069ef9sm61925311fa.91 - gsmtp"
+time="2025-01-08T14:39:20+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T14:39:41+05:00" level=info msg=seraf5bk.ru@gmail.com
+time="2025-01-08T14:39:42+05:00" level=fatal msg="failed to send mail: dial failed: SMTP AUTH failed: 535 5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-54279702181sm786865e87.67 - gsmtp"
+time="2025-01-08T14:42:13+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T14:42:37+05:00" level=info msg=seraf5bk.ru@gmail.com
+time="2025-01-08T14:42:38+05:00" level=fatal msg="failed to send mail: dial failed: SMTP AUTH failed: 535 5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-54223821665sm5426136e87.177 - gsmtp"
+time="2025-01-08T14:43:49+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T14:44:05+05:00" level=info msg=seraf5bk.ru@gmail.com
+time="2025-01-08T14:44:05+05:00" level=fatal msg="failed to send mail: dial failed: SMTP AUTH failed: 535 5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 38308e7fff4ca-3045b069f04sm61273241fa.89 - gsmtp"
+time="2025-01-08T14:51:03+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T14:53:29+05:00" level=info msg=kantaidaulet@gmail.com
+time="2025-01-08T14:53:30+05:00" level=error msg="failed to send mail: dial failed: SMTP AUTH failed: 535 5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-5425c885aafsm2284086e87.139 - gsmtp"
+time="2025-01-08T14:53:30+05:00" level=error msg=ERROR message="dial failed: SMTP AUTH failed: 535 5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-5425c885aafsm2284086e87.139 - gsmtp" scope=Database
+time="2025-01-08T15:01:55+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T15:02:23+05:00" level=info msg=serafbbs@gmail.com
+time="2025-01-08T15:02:27+05:00" level=info msg="Email sent successfully" from=kantaidaulet@gmail.com subject=hhhhhhh to=serafbbs@gmail.com
+time="2025-01-08T15:04:01+05:00" level=info msg=seraf5@bk.ru
+time="2025-01-08T15:04:04+05:00" level=info msg="Email sent successfully" from=kantaidaulet@gmail.com subject=heeeey to=seraf5@bk.ru
+time="2025-01-08T15:09:58+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T15:10:12+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T15:11:20+05:00" level=info msg=seraf5@bk.ru
+time="2025-01-08T15:11:24+05:00" level=info msg="Email sent successfully" from=kantaidaulet@gmail.com subject="It's bad bad bad" to=seraf5@bk.ru

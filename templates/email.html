@@ -19,17 +19,14 @@
 
 
     <body>
-        <h1>Hello, {{ .name }}!</h1>
+        <h1>Hello!</h1>
         <br>
         <h2>Send us a report:</h2>
 
         <form 
-            hx-post="/mail"
-            hx-target="#users"
-            hx-swap="beforeend">
-            <input type="text" name="username">
-            <input type="text" name="educational_program">
-            <button>Save</button>
+            hx-post="/mail">
+            <input type="text" name="message" placeholder="Report">
+            <button>Send!</button>
         </form>
 
         <!-- Error Message Container -->

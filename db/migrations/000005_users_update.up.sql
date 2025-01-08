@@ -1,9 +1,9 @@
 -- First, add the new columns
 ALTER TABLE users 
-    ADD COLUMN email VARCHAR(255) NOT NULL,
-    ADD COLUMN password VARCHAR(255) NOT NULL,
-    ADD COLUMN public_name VARCHAR(100) NOT NULL,
-    ADD COLUMN bio VARCHAR(100) NOT NULL,
+    ADD COLUMN email VARCHAR(255),
+    ADD COLUMN password VARCHAR(255),
+    ADD COLUMN public_name VARCHAR(100),
+    ADD COLUMN bio VARCHAR(100),
     ADD COLUMN group_id INTEGER;
 
 -- Add unique constraint for email

@@ -151,6 +151,10 @@ func parseThreadFilter(c *gin.Context) repository.ThreadFilter {
 	}
 
 	filter.Search = c.Query("search")
+	order := c.Query("order")
+	filter.Order = &order
+	orderby := c.Query("order_by")
+	filter.OrderBy = &orderby
 
 	return filter
 }

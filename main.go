@@ -1,6 +1,7 @@
 package main
 
 import (
+	"html/template"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -12,16 +13,10 @@ import (
 	"aitu-moment/handlers"
 )
 
-// Create a new instance of the logger. You can have any number of instances.
 var log = logrus.New()
 
 func init() {
 
-	// The API for setting attributes is a little different than the package level
-	// exported logger. See Godoc.
-	// log.Out = os.Stdout
-
-	// You could set this to any `io.Writer` such as a file
 	file, err := os.OpenFile("logrus.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err == nil {
 		log.Out = file
@@ -34,7 +29,7 @@ func main() {
 	log.WithFields(logrus.Fields{
 		"status": "OK!",
 		"msg":    "HEY",
-	}).Info("HEY2")
+	}).Info("STARTED!!")
 
 	databaseConnection, err := db.NewDatabase()
 
@@ -45,6 +40,10 @@ func main() {
 	defer databaseConnection.Close()
 
 	e := gin.Default()
+	e.SetFuncMap(template.FuncMap{
+		"sub": func(a, b int) int { return a - b },
+		"add": func(a, b int) int { return a + b },
+	})
 	e.LoadHTMLGlob("templates/*")
 
 	userRepo := repository.NewUserRepository(databaseConnection.GetDB())
@@ -53,6 +52,7 @@ func main() {
 	e.POST("/users", userHandler.SaveUser)
 	e.GET("/mail", userHandler.GetMail)
 	e.POST("/mail", userHandler.SendMail)
+	e.GET("/threads", userHandler.GetThreads)
 
 	e.Run(":8080")
 }

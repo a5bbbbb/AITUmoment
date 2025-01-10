@@ -32,3 +32,348 @@ time="2025-01-08T15:09:58+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
 time="2025-01-08T15:10:12+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
 time="2025-01-08T15:11:20+05:00" level=info msg=seraf5@bk.ru
 time="2025-01-08T15:11:24+05:00" level=info msg="Email sent successfully" from=kantaidaulet@gmail.com subject="It's bad bad bad" to=seraf5@bk.ru
+time="2025-01-08T15:17:28+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T15:17:45+05:00" level=info msg=seraf5@bk.ru
+time="2025-01-08T15:17:47+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com subject="How are you" to=seraf5@bk.ru
+time="2025-01-08T15:28:39+05:00" level=info msg=HEY2 fields.msg=HEY status="OK!"
+time="2025-01-08T15:28:55+05:00" level=info msg=seraf5@bk.ru
+time="2025-01-08T15:28:57+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com subject=WHYYY to=seraf5@bk.ru
+time="2025-01-08T15:50:17+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T15:51:22+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T15:59:42+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:00:46+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:01:52+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:03:32+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:03:44+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:03:44+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: column \"id\" does not exist"
+time="2025-01-08T16:04:15+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:04:20+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:04:20+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: column \"id\" does not exist"
+time="2025-01-08T16:05:28+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:05:34+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:05:37+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T16:05:39+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:05:40+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:05:40+05:00" level=error msg="Failed to fetch threads" error="error getting thread: pq: bind message supplies 1 parameters, but prepared statement \"\" requires 2"
+time="2025-01-08T16:05:42+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T16:06:12+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:06:14+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T16:06:44+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:06:44+05:00" level=info msg="Successfully fetched threads" thread_count=1 total_count=1
+time="2025-01-08T16:12:05+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:12:15+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:12:15+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: column \"id\" does not exist"
+time="2025-01-08T16:13:01+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:13:07+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:13:07+05:00" level=info msg="Successfully fetched threads" thread_count=1 total_count=1
+time="2025-01-08T16:13:11+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:13:11+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T16:42:02+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:42:21+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:42:21+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T16:43:12+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:43:41+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:43:41+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T16:45:24+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:45:28+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:45:28+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T16:46:01+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:46:01+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T16:50:41+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:50:48+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:50:48+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T16:51:04+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:51:04+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T16:58:37+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T16:58:51+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T16:58:51+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T16:58:51+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:00:43+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:01:51+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:02:06+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:02:06+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:02:06+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:02:54+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:03:01+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:03:02+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:03:02+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:03:03+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:03:03+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:03:03+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:03:05+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:03:06+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:03:06+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:03:50+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:03:55+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:03:55+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:03:55+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:03:55+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:03:56+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:03:56+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:03:56+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:03:56+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:04:08+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:04:08+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:04:08+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:04:08+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:05:38+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:05:45+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:05:45+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:05:45+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:05:45+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:05:49+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:05:49+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:05:49+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:05:49+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:07:09+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:07:10+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:07:10+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:07:10+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:07:37+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:07:51+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:07:51+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:07:51+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:07:51+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:07:55+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:07:55+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:07:55+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:07:55+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:08:05+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:08:05+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:08:05+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:08:05+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:08:09+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:08:09+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:08:09+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:08:09+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:08:13+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:08:13+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:08:13+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:08:13+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:08:15+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:08:16+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:08:16+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:08:16+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:08:18+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:08:19+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:08:19+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:08:19+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:08:22+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:08:22+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:08:22+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:08:22+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:08:49+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:08:50+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:08:50+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:08:50+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:12:04+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:12:11+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:12:11+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:12:11+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:12:11+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:12:14+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:12:14+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:12:14+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:12:14+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:12:17+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:12:18+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:12:18+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:12:18+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:12:20+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:12:20+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:12:20+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:12:20+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:12:30+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:12:35+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:12:35+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:12:35+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:12:35+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:12:43+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:12:43+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:12:43+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:12:43+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:12:45+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:12:45+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:12:45+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:12:45+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:12:46+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:12:47+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:12:47+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:12:47+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:12:48+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:12:48+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:12:48+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:12:48+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:13:13+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:13:14+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:13:14+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:13:14+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:13:35+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:13:54+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:13:55+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:13:55+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:13:55+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:13:56+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:13:56+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:13:56+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:13:56+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:14:00+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:14:00+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:14:00+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:14:00+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:14:04+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:14:04+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:14:04+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:14:04+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:14:10+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:14:10+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:14:10+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:14:10+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:14:21+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:14:21+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:14:21+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:14:21+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:14:29+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:14:29+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:14:29+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:14:29+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:15:06+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:15:12+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:15:12+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:15:12+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:15:12+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:15:28+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-08T17:16:00+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:16:00+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:16:00+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:16:00+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:16:18+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:16:18+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:16:18+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:16:18+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:17:05+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:17:05+05:00" level=info msg="Successfully fetched threads" thread_count=9 total_count=9
+time="2025-01-08T17:17:05+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:17:05+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:17:23+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:17:24+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:17:24+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:17:24+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:17:35+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:17:36+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:17:36+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:17:36+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:17:40+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:17:40+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:17:40+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:17:40+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:17:43+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:17:43+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:17:43+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:17:43+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:18:00+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:18:00+05:00" level=info msg="Successfully fetched threads" thread_count=0 total_count=0
+time="2025-01-08T17:18:00+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:18:00+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:18:16+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:18:16+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:18:16+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:18:16+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:18:36+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:18:36+05:00" level=info msg="Successfully fetched threads" thread_count=6 total_count=6
+time="2025-01-08T17:18:36+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:18:36+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:19:20+05:00" level=info msg=seraf5@bk.ru
+time="2025-01-08T17:19:22+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com subject="GOOD BY" to=seraf5@bk.ru
+time="2025-01-08T17:19:48+05:00" level=info msg=seraf5@bk.ru
+time="2025-01-08T17:19:50+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com subject= to=seraf5@bk.ru
+time="2025-01-08T17:19:57+05:00" level=info msg=seraf5@bk.ru
+time="2025-01-08T17:19:58+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com subject=" " to=seraf5@bk.ru
+time="2025-01-08T17:22:49+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:22:49+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:22:49+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:22:49+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:23:43+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:23:44+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:23:44+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:23:44+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:23:50+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:23:50+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:23:50+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:23:50+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:24:08+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:24:08+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:24:08+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:24:08+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:24:16+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:24:16+05:00" level=info msg="Successfully fetched threads" thread_count=0 total_count=0
+time="2025-01-08T17:24:16+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:24:16+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:24:33+05:00" level=info msg=seraf5@bk.ru
+time="2025-01-08T17:24:35+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com subject=hhhh to=seraf5@bk.ru
+time="2025-01-08T17:28:37+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:28:37+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:28:37+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:28:37+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:28:59+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:28:59+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:28:59+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:28:59+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:29:12+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:29:12+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:29:12+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:29:12+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:29:17+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:29:17+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:29:17+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:29:17+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:29:24+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:29:25+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:29:25+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:29:25+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:29:29+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:29:29+05:00" level=info msg="Successfully fetched threads" thread_count=0 total_count=0
+time="2025-01-08T17:29:29+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:29:29+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:29:36+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:29:36+05:00" level=info msg="Successfully fetched threads" thread_count=1 total_count=1
+time="2025-01-08T17:29:36+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:29:36+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:29:44+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:29:45+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:29:45+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:29:45+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:30:02+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:30:02+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:30:02+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:30:02+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:30:21+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:30:21+05:00" level=info msg="Successfully fetched threads" thread_count=0 total_count=0
+time="2025-01-08T17:30:21+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:30:21+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:30:25+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:30:26+05:00" level=info msg="Successfully fetched threads" thread_count=1 total_count=1
+time="2025-01-08T17:30:26+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:30:26+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:30:37+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:30:37+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:30:37+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:30:37+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:30:37+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:30:37+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=30
+time="2025-01-08T17:30:37+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:30:37+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:30:41+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:30:41+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-08T17:30:41+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:30:41+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:31:00+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:31:00+05:00" level=info msg="Successfully fetched threads" thread_count=1 total_count=1
+time="2025-01-08T17:31:00+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:31:00+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:31:08+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-08T17:31:08+05:00" level=info msg="Successfully fetched threads" thread_count=10 total_count=14
+time="2025-01-08T17:31:08+05:00" level=info msg="Rendering full page response"
+time="2025-01-08T17:31:08+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-08T17:32:33+05:00" level=info msg=seraf5@bk.ru
+time="2025-01-08T17:32:34+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com subject=Hello to=seraf5@bk.ru

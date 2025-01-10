@@ -18,13 +18,15 @@
     </script>
 
 
-    <body>
+    <body id="bod">
         <h1>Hello!</h1>
         <br>
         <h2>Send us a report:</h2>
 
         <form 
-            hx-post="/mail">
+            hx-post="/mail"
+            hx-swap="outerHTML"
+            hx-target="#bod">
             <input type="text" name="message" placeholder="Report">
             <button>Send!</button>
         </form>

@@ -1,0 +1,98 @@
+<!-- <!-- templates/partials/thread-list.html --> -->
+<!---->
+<!--          -->
+<!-- {{ range .threads }} -->
+<!-- <div class="thread-item" id="thread-{{ .ID }}"> -->
+<!--     <div class="thread-content"> -->
+<!--         {{ if .ParentThreadID }} -->
+<!--         <div class="reply-indicator">↳ Reply to #{{ .ParentThreadID }}</div> -->
+<!--         {{ end }} -->
+<!--         {{ .Content }} -->
+<!--     </div> -->
+<!--     <div class="thread-meta"> -->
+<!--         <span>Posted: {{ .CreateDate.Format "Jan 02, 2006 15:04" }}</span> -->
+<!--         <span>Upvotes: {{ .UpVotes }}</span> -->
+<!--     </div> -->
+<!-- </div> -->
+<!-- {{ end }} -->
+<!---->
+<!-- <div class="pagination"> -->
+<!--     {{ if .hasPrevPage }} -->
+<!--     <a href="?page={{ sub .currentPage 1 }}" -->
+<!--        class="prev-page" -->
+<!--        hx-get="/threads?page={{ sub .currentPage 1 }}" -->
+<!--        hx-target="#thread-list" -->
+<!--        hx-push-url="true"> -->
+<!--         Previous -->
+<!--     </a> -->
+<!--     {{ end }} -->
+<!---->
+<!--     <span class="page-info">Page {{ .currentPage }} of {{ .totalPages }}</span> -->
+<!---->
+<!--     {{ if .hasNextPage }} -->
+<!--     <a href="?page={{ add .currentPage 1 }}" -->
+<!--        class="next-page" -->
+<!--        hx-get="/threads?page={{ add .currentPage 1 }}" -->
+<!--        hx-target="#thread-list" -->
+<!--        hx-push-url="true"> -->
+<!--         Next -->
+<!--     </a> -->
+<!--     {{ end }} -->
+<!-- </div> -->
+<!---->
+
+
+
+
+
+<!-- templates/thread-list.html -->
+<div class="threads-container" style="border: 1px solid blue; padding: 10px;">
+    <!-- At the top of thread-list.html, add this debug section -->
+{{ if .threads }}
+    <div style="background: #e0e0e0; padding: 5px; margin-bottom: 10px;">
+        Found {{ len .threads }} threads
+    </div>
+{{ else }}
+    <div style="background: #ffe0e0; padding: 5px; margin-bottom: 10px;">
+        No threads found
+    </div>
+{{ end }}
+    {{ range .threads }}
+    <div class="thread-item" id="thread-{{ .ID }}" style="margin: 10px 0; padding: 10px; background: #f0f0f0;">
+        <div class="thread-content">
+            {{ if .ParentThreadID }}
+            <div class="reply-indicator" style="color: blue;">↳ Reply to #{{ .ParentThreadID }}</div>
+            {{ end }}
+            {{ .Content }}
+        </div>
+        <div class="thread-meta" style="font-size: 0.9em; color: #666;">
+            <span>Posted: {{ .CreateDate.Format "Jan 02, 2006 15:04" }}</span>
+            <span>Upvotes: {{ .UpVotes }}</span>
+        </div>
+    </div>
+    {{ end }}
+
+    <div class="pagination" style="margin-top: 20px;">
+        {{ if .hasPrevPage }}
+        <a href="?page={{ .prevPage }}"
+           class="prev-page"
+           hx-get="/threads?page={{ .prevPage }}"
+           hx-target="#thread-list"
+           hx-push-url="true">
+            Previous
+        </a>
+        {{ end }}
+
+        <span class="page-info">Page {{ .currentPage }} of {{ .totalPages }}</span>
+
+        {{ if .hasNextPage }}
+        <a href="?page={{ .nextPage }}"
+           class="next-page"
+           hx-get="/threads?page={{ .nextPage }}"
+           hx-target="#thread-list"
+           hx-push-url="true">
+            Next
+        </a>
+        {{ end }}
+    </div>
+</div>

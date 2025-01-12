@@ -23,11 +23,10 @@
         <br>
         <h2>Send us a report:</h2>
 
-        <form 
-            hx-post="/mail"
-            hx-swap="outerHTML"
-            hx-target="#bod">
+        <form action="/mail" method="POST" enctype="multipart/form-data">
             <input type="text" name="message" placeholder="Report">
+            <input type="email" name="receiver" placeholder="">
+            <input type="file" name="file" >
             <button>Send!</button>
         </form>
 

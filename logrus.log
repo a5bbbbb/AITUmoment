@@ -505,3 +505,744 @@ time="2025-01-10T13:15:38+05:00" level=info msg="Starting to fetch threads"
 time="2025-01-10T13:15:38+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
 time="2025-01-10T13:15:38+05:00" level=info msg="Rendering full page response"
 time="2025-01-10T13:15:38+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-10T15:35:16+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-10T15:35:28+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-10T15:35:28+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-10T15:35:28+05:00" level=info msg="Rendering full page response"
+time="2025-01-10T15:35:28+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-10T15:36:40+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-10T15:36:40+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-10T15:36:40+05:00" level=info msg="Rendering full page response"
+time="2025-01-10T15:36:40+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-10T15:36:52+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-10T15:36:52+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-10T15:36:52+05:00" level=info msg="Rendering full page response"
+time="2025-01-10T15:36:52+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-10T15:46:06+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-10T15:46:15+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-10T15:46:15+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-10T15:46:15+05:00" level=info msg="Rendering full page response"
+time="2025-01-10T15:46:15+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-10T15:58:35+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-10T16:00:36+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-10T16:00:45+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-10T16:00:45+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-10T16:00:45+05:00" level=info msg="Rendering full page response"
+time="2025-01-10T16:00:45+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-10T16:01:24+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-10T16:01:44+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-10T16:01:44+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-10T16:01:44+05:00" level=info msg="Rendering full page response"
+time="2025-01-10T16:01:44+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-10T16:09:04+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-10T16:09:18+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-10T16:09:18+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-10T16:09:18+05:00" level=info msg="Rendering full page response"
+time="2025-01-10T16:09:18+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-10T16:15:12+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-10T16:15:26+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-10T16:15:26+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-10T16:15:26+05:00" level=info msg="Rendering full page response"
+time="2025-01-10T16:15:26+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:24+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T19:57:51+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:51+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:51+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:51+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:51+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:51+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:51+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:51+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:52+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:52+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:52+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:52+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:52+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:52+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:52+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:52+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:52+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:52+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:52+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:52+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:53+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:53+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:53+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:53+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:53+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:53+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:53+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:53+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:53+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:53+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:53+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:53+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:54+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:54+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:54+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:54+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:54+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:54+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:54+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:54+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:55+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:55+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:55+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:55+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:56+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:56+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:56+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:56+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:56+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:56+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:56+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:56+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T19:57:56+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T19:57:56+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T19:57:56+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T19:57:56+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:18+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T20:08:27+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:28+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:28+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:28+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:29+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:29+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:29+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:29+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:30+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:30+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:30+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:30+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:31+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:31+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:31+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:31+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:31+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:31+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:31+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:31+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:31+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:32+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:32+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:32+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:32+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:32+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:32+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:32+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:46+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:46+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:46+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:46+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:47+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:47+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:47+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:47+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:47+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:47+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:47+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:47+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:47+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:47+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:47+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:47+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:08:47+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:08:47+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:08:47+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:08:47+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:10:16+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T20:10:51+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:10:51+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:10:51+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:10:51+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:10:52+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:10:52+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:10:52+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:10:52+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:10:52+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:10:52+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:10:52+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:10:52+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:11:15+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:11:15+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:11:15+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:11:15+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:11:16+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:11:16+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:11:16+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:11:16+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:11:16+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:11:16+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:11:16+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:11:16+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:11:17+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:11:17+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:11:17+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:11:17+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:12:42+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:12:42+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:12:42+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:12:42+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:12:43+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:12:43+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:12:43+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:12:43+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:12:43+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:12:43+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:12:43+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:12:43+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:12:43+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:12:43+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:12:43+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:12:43+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:14:20+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:14:20+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:14:20+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:14:20+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:14:22+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:14:22+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:14:22+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:14:22+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:16:50+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:16:50+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:16:50+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:16:50+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:16:57+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:16:57+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:16:57+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:16:57+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:17:05+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:17:05+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:17:05+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:17:05+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:17:14+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:17:14+05:00" level=info msg="Successfully fetched threads" thread_count=0 total_count=0
+time="2025-01-11T20:17:14+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:17:14+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:17:37+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:17:37+05:00" level=info msg="Successfully fetched threads" thread_count=0 total_count=0
+time="2025-01-11T20:17:37+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:17:37+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:17:39+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:17:39+05:00" level=info msg="Successfully fetched threads" thread_count=0 total_count=0
+time="2025-01-11T20:17:39+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:17:39+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:17:47+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:17:47+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:17:47+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:17:47+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:18:08+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:18:08+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:18:08+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:18:08+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:18:34+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:18:34+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:18:34+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:18:34+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:25:30+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:25:30+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:25:30+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:25:30+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:27:10+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T20:35:12+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:35:12+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:35:12+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:35:13+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:36:12+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:36:12+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:36:12+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:36:12+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:36:17+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:36:17+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:36:17+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:36:17+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:36:18+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:36:18+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:36:18+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:36:18+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:36:18+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:36:18+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:36:18+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:36:18+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:36:18+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:36:18+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:36:18+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:36:18+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:36:20+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:36:20+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:36:20+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:36:20+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:38:12+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:38:12+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:38:12+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:38:12+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:38:53+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:38:53+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:38:53+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:38:53+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:47:35+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:47:35+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:47:35+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:47:35+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:47:37+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:47:37+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:47:37+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:47:37+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:48:29+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:48:29+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:48:29+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:48:29+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T20:48:51+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T20:48:51+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T20:48:51+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T20:48:51+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T21:10:04+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:10:04+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T21:10:04+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T21:10:04+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T21:10:08+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:10:08+05:00" level=info msg="Successfully fetched threads" thread_count=0 total_count=0
+time="2025-01-11T21:10:08+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T21:10:08+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T21:10:13+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:10:13+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T21:10:13+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T21:10:13+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T21:11:54+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:11:54+05:00" level=info msg="Successfully fetched threads" thread_count=2 total_count=2
+time="2025-01-11T21:11:54+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T21:11:54+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T21:12:07+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:12:07+05:00" level=info msg="Successfully fetched threads" thread_count=0 total_count=0
+time="2025-01-11T21:12:07+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T21:12:07+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T21:12:13+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:12:13+05:00" level=info msg="Successfully fetched threads" thread_count=4 total_count=4
+time="2025-01-11T21:12:13+05:00" level=info msg="Rendering full page response"
+time="2025-01-11T21:12:13+05:00" level=info msg="Rendering HTMX partial response"
+time="2025-01-11T21:18:01+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T21:18:19+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:18:20+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:18:20+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:18:20+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:18:21+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:18:21+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:18:21+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:18:21+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:18:28+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:18:28+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:18:28+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:18:28+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:18:30+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:18:30+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:18:30+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:18:30+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:25:50+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:25:50+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:25:50+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:25:50+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:26:29+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T21:26:40+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:26:40+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:26:40+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:26:40+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:26:40+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:26:55+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:26:55+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=0 total_count=0
+time="2025-01-11T21:26:55+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:26:55+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:26:55+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:27:07+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T21:27:25+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:27:25+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=0 total_count=0
+time="2025-01-11T21:27:25+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:27:25+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:27:25+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:27:33+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:27:33+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:27:33+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:27:33+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:27:33+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:27:49+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:27:49+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:27:49+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:27:49+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:27:49+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:27:56+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:27:56+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:27:56+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:27:56+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:27:56+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:28:07+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:28:07+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:28:07+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:28:07+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:28:07+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:31:01+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T21:31:19+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:31:19+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"%\")" function=GetThreads package=home_handler
+time="2025-01-11T21:34:39+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T21:34:48+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:34:48+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T21:34:48+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:34:48+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:34:48+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:43:35+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:43:35+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T21:43:35+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:43:35+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:43:36+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:44:12+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:44:12+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T21:44:12+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:44:12+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:44:12+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:46:00+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T21:46:12+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:46:12+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T21:46:12+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:46:12+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:46:12+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:46:24+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:46:24+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T21:46:24+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:46:24+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:46:24+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:46:31+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:46:31+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T21:46:31+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:46:31+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:46:31+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:46:37+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:46:37+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T21:46:37+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:46:37+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:46:37+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:46:40+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:46:40+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T21:46:40+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:46:40+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:46:40+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:53:59+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T21:54:11+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:54:11+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T21:54:11+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:54:11+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:54:11+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:55:25+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:55:25+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T21:55:25+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:55:25+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:55:25+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T21:55:59+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T21:55:59+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T21:55:59+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T21:55:59+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T21:55:59+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T22:01:21+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T22:01:21+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T22:01:21+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T22:01:21+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T22:01:22+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T22:05:46+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T22:06:39+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T22:06:39+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"DESC\")" function=GetThreads package=home_handler
+time="2025-01-11T22:08:35+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T22:08:53+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T22:08:53+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"DESC\")" function=GetThreads package=home_handler
+time="2025-01-11T22:08:55+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T22:08:55+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"DESC\")" function=GetThreads package=home_handler
+time="2025-01-11T22:12:21+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T22:12:35+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T22:12:35+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"DESC\")" function=GetThreads package=home_handler
+time="2025-01-11T22:18:48+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T22:19:03+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T22:19:03+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"AND\")" function=GetThreads package=home_handler
+time="2025-01-11T22:41:20+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T22:41:50+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T22:41:50+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: оператор не существует: ? integer" function=GetThreads package=home_handler
+time="2025-01-11T22:43:48+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T22:43:59+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T22:43:59+05:00" level=error msg="Failed to fetch threads" error="error querying threads: sql: converting argument $1 type: unsupported type []interface {}, a slice of interface" function=GetThreads package=home_handler
+time="2025-01-11T22:47:16+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T22:47:34+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T22:47:34+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: оператор не существует: ? integer" function=GetThreads package=home_handler
+time="2025-01-11T23:09:30+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T23:09:31+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:09:31+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: параметр $1 не существует" function=GetThreads package=home_handler
+time="2025-01-11T23:09:43+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:09:43+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: параметр $1 не существует" function=GetThreads package=home_handler
+time="2025-01-11T23:11:35+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T23:12:29+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:12:29+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:12:29+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:12:29+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:12:29+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:15:34+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:15:34+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:15:34+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:15:34+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:15:34+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:18:43+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:18:44+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:18:44+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:18:44+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:18:44+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:20:10+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:20:10+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:20:10+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:20:10+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:20:10+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:20:11+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:20:11+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:20:11+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:20:11+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:20:11+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:23:16+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:23:16+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:23:16+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:23:16+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:23:16+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:25:52+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T23:26:09+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:26:09+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:26:09+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:26:09+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:26:09+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:49:53+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T23:50:14+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:50:14+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:50:14+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:50:14+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:50:14+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:50:19+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:50:19+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=5 total_count=5
+time="2025-01-11T23:50:19+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:50:19+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:50:19+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:50:23+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:50:23+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=4 total_count=4
+time="2025-01-11T23:50:23+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:50:23+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:50:23+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:50:31+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:50:31+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:50:31+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:50:31+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:50:31+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:50:38+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:50:38+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:50:38+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:50:38+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:50:38+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:52:52+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:52:52+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=0 total_count=0
+time="2025-01-11T23:52:52+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:52:52+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:52:52+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:55:02+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T23:55:12+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:55:12+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-11T23:55:12+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:55:12+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:55:12+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:57:04+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-11T23:57:04+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:57:04+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=5 total_count=5
+time="2025-01-11T23:57:04+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:57:04+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:57:04+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:57:15+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:57:15+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=5 total_count=5
+time="2025-01-11T23:57:15+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:57:15+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:57:15+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-11T23:57:58+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-11T23:57:58+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=5 total_count=5
+time="2025-01-11T23:57:58+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-11T23:57:58+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-11T23:57:58+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T00:03:19+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T00:03:33+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T00:03:33+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=5 total_count=5
+time="2025-01-12T00:03:33+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T00:03:33+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T00:03:33+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T00:05:32+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T00:05:41+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T00:05:41+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-12T00:05:41+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T00:05:41+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T00:05:41+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T00:08:44+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T00:08:54+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T00:08:54+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=5 total_count=5
+time="2025-01-12T00:08:54+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T00:08:54+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T00:08:54+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T00:08:57+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T00:08:57+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=5 total_count=5
+time="2025-01-12T00:08:57+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T00:08:57+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T00:08:57+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T00:14:07+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T00:14:43+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T00:14:43+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"$3\")" function=GetThreads package=home_handler
+time="2025-01-12T00:14:44+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T00:14:44+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"$3\")" function=GetThreads package=home_handler
+time="2025-01-12T00:15:47+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T00:15:47+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"$3\")" function=GetThreads package=home_handler
+time="2025-01-12T01:19:19+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T01:19:36+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:19:36+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: не удалось определить тип данных параметра $3" function=GetThreads package=home_handler
+time="2025-01-12T01:19:37+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:19:37+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: не удалось определить тип данных параметра $3" function=GetThreads package=home_handler
+time="2025-01-12T01:20:21+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T01:20:34+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:20:34+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=5 total_count=5
+time="2025-01-12T01:20:34+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T01:20:34+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T01:20:34+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T01:22:15+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T01:22:25+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:22:25+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"$\")" function=GetThreads package=home_handler
+time="2025-01-12T01:22:26+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:22:26+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"$\")" function=GetThreads package=home_handler
+time="2025-01-12T01:29:23+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T01:29:24+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:29:24+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"$\")" function=GetThreads package=home_handler
+time="2025-01-12T01:29:34+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:29:34+05:00" level=error msg="Failed to fetch threads" error="error querying threads: pq: ошибка синтаксиса (примерное положение: \"$\")" function=GetThreads package=home_handler
+time="2025-01-12T01:30:18+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T01:32:56+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:32:56+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=5 total_count=5
+time="2025-01-12T01:32:56+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T01:32:56+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T01:32:56+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T01:33:03+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:33:03+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=5 total_count=5
+time="2025-01-12T01:33:03+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T01:33:03+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T01:33:03+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T01:33:15+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:33:15+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-12T01:33:15+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T01:33:15+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T01:33:15+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T01:33:20+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:33:20+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-12T01:33:20+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T01:33:20+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T01:33:20+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T01:59:41+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:59:41+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-12T01:59:41+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T01:59:41+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T01:59:41+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T01:59:54+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T01:59:54+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-12T01:59:54+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T01:59:54+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T01:59:54+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T02:00:07+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T02:00:07+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-12T02:00:07+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T02:00:07+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T02:00:07+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T02:03:20+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T02:03:42+05:00" level=info msg="Starting to fetch threads"
+time="2025-01-12T02:03:42+05:00" level=info msg="Successfully fetched threads" function=GetThreads package=home_handler thread_count=6 total_count=6
+time="2025-01-12T02:03:42+05:00" level=info msg="Rendering full page response" function=GetThreads package=home_handler
+time="2025-01-12T02:03:42+05:00" level=info msg="Rendering filter page" function=GetThreads package=home_handler
+time="2025-01-12T02:03:42+05:00" level=info msg="Rendering HTMX partial response" function=GetThreads package=home_handler
+time="2025-01-12T02:41:53+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T03:28:52+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T03:29:16+05:00" level=info msg=viktorsuprunov9@gmail.com
+time="2025-01-12T03:29:22+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com subject=test to=viktorsuprunov9@gmail.com
+time="2025-01-12T03:49:09+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T03:51:05+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T03:51:05+05:00" level=error msg=ERROR message="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T03:54:37+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T03:55:09+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." filepath=/uploads/ from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T03:55:09+05:00" level=error msg=ERROR message="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T03:56:23+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T03:56:54+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open C:UsersPCDesktopuni coursesAdvanced_Programming_1AITUmomentuploads/: The system cannot find the file specified." filepath="C:UsersPCDesktopuni coursesAdvanced_Programming_1AITUmomentuploads/" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T03:56:54+05:00" level=error msg=ERROR message="gomail: could not send email 1: open C:UsersPCDesktopuni coursesAdvanced_Programming_1AITUmomentuploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T03:57:15+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open C:UsersPCDesktopuni coursesAdvanced_Programming_1AITUmomentuploads/: The system cannot find the file specified." filepath="C:UsersPCDesktopuni coursesAdvanced_Programming_1AITUmomentuploads/" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T03:57:15+05:00" level=error msg=ERROR message="gomail: could not send email 1: open C:UsersPCDesktopuni coursesAdvanced_Programming_1AITUmomentuploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T03:59:16+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T03:59:43+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open C:UsersPCDesktopuni coursesAdvanced_Programming_1AITUmomentuploads/: The system cannot find the file specified." filepath="C:UsersPCDesktopuni coursesAdvanced_Programming_1AITUmomentuploads/" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T03:59:43+05:00" level=error msg=ERROR message="gomail: could not send email 1: open C:UsersPCDesktopuni coursesAdvanced_Programming_1AITUmomentuploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T11:15:17+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T11:16:10+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: read ./uploads//: Incorrect function." filepath=./uploads// from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T11:16:10+05:00" level=error msg=ERROR message="gomail: could not send email 1: read ./uploads//: Incorrect function." scope=Database
+time="2025-01-12T11:42:13+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T11:42:39+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." filepath=/uploads/ from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T11:42:39+05:00" level=error msg=ERROR message="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T11:46:47+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T11:47:05+05:00" level=debug msg="Received file. Before save." Filename: = Header: ="map[]" Size: =0 function=SendMail package=home_handler
+time="2025-01-12T11:47:12+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." filepath=/uploads/ from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T11:47:12+05:00" level=error msg=ERROR message="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T12:02:13+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T12:02:41+05:00" level=error msg="Unable to bind form values to form struct." function=SendMail package=home_handler
+time="2025-01-12T12:02:41+05:00" level=error msg=ERROR message="Key: 'Form.Files' Error:Field validation for 'Files' failed on the 'required' tag" scope=Database
+time="2025-01-12T12:03:04+05:00" level=error msg="Unable to bind form values to form struct." function=SendMail package=home_handler
+time="2025-01-12T12:03:04+05:00" level=error msg=ERROR message="Key: 'Form.Files' Error:Field validation for 'Files' failed on the 'required' tag" scope=Database
+time="2025-01-12T12:03:32+05:00" level=debug msg="Received file. Before save." Filename: = Header: ="map[]" Size: =0 function=SendMail package=home_handler
+time="2025-01-12T12:03:37+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." filepath=/uploads/ from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T12:03:37+05:00" level=error msg=ERROR message="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T12:06:15+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T12:06:16+05:00" level=info msg="Set log level to debug"
+time="2025-01-12T12:07:00+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T12:07:00+05:00" level=info msg="Set log level to debug"
+time="2025-01-12T12:07:16+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T12:07:16+05:00" level=warning msg="Set log level to debug"
+time="2025-01-12T12:07:41+05:00" level=debug msg="Received file. Before save." Filename: = Header: ="map[]" Size: =0 function=SendMail package=home_handler
+time="2025-01-12T12:07:48+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." filepath=/uploads/ from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T12:07:48+05:00" level=error msg=ERROR message="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T12:30:38+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T12:30:39+05:00" level=warning msg="Set log level to debug"
+time="2025-01-12T12:33:09+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T12:33:10+05:00" level=warning msg="Set log level to debug"
+time="2025-01-12T12:33:36+05:00" level=debug msg="Received file. Before save." Filename: = Header: ="map[]" Size: =0 function=SendMail package=home_handler
+time="2025-01-12T12:33:42+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." filepath=/uploads/ from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T12:33:42+05:00" level=error msg=ERROR message="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T12:35:59+05:00" level=debug msg="Received file. Before save." Filename: = Header: ="map[]" Size: =0 function=SendMail package=home_handler
+time="2025-01-12T12:36:01+05:00" level=debug msg="Received file. Before save." Filename: = Header: ="map[]" Size: =0 function=SendMail package=home_handler
+time="2025-01-12T12:36:05+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." filepath=/uploads/ from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T12:36:05+05:00" level=error msg=ERROR message="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T12:36:07+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." filepath=/uploads/ from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T12:36:07+05:00" level=error msg=ERROR message="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T12:36:27+05:00" level=debug msg="Received file. Before save." Filename: = Header: ="map[]" Size: =0 function=SendMail package=home_handler
+time="2025-01-12T12:36:33+05:00" level=error msg="Failed to send email" error="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." filepath=/uploads/ from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!! Wanna see it?" to=viktorsuprunov9@gmail.com
+time="2025-01-12T12:36:33+05:00" level=error msg=ERROR message="gomail: could not send email 1: open /uploads/: The system cannot find the file specified." scope=Database
+time="2025-01-12T12:38:40+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T12:38:40+05:00" level=warning msg="Set log level to debug"
+time="2025-01-12T12:38:58+05:00" level=debug msg="No file received." function=SendMail package=home_handler
+time="2025-01-12T12:39:06+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!! Wanna see it?" to=viktorsuprunov9@gmail.com
+time="2025-01-12T12:39:59+05:00" level=debug msg="No file received." function=SendMail package=home_handler
+time="2025-01-12T12:40:07+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!! Check it out!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T12:53:44+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T12:53:44+05:00" level=warning msg="Set log level to debug"
+time="2025-01-12T12:54:12+05:00" level=error msg="Bad request or file is incorrect"
+time="2025-01-12T12:56:26+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T12:56:26+05:00" level=warning msg="Set log level to debug"
+time="2025-01-12T12:56:35+05:00" level=error msg="Bad request or file is incorrect"
+time="2025-01-12T12:56:35+05:00" level=debug msg="No file received." function=SendMail package=home_handler
+time="2025-01-12T12:56:44+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!! Check it out!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T12:59:20+05:00" level=error msg="Bad request or file is incorrect"
+time="2025-01-12T12:59:20+05:00" level=debug msg="No file received." function=SendMail package=home_handler
+time="2025-01-12T12:59:25+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T13:00:31+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T13:00:31+05:00" level=warning msg="Set log level to debug"
+time="2025-01-12T13:00:54+05:00" level=error msg="Bad request or file is incorrect: request Content-Type isn't multipart/form-data"
+time="2025-01-12T13:00:54+05:00" level=debug msg="No file received." function=SendMail package=home_handler
+time="2025-01-12T13:01:00+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!! Check it out!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T13:01:35+05:00" level=debug msg="Received file. Before save." Filename: =Figure_1.png Header: ="map[Content-Disposition:[form-data; name=\"file\"; filename=\"Figure_1.png\"] Content-Type:[image/png]]" Size: =161399 function=SendMail package=home_handler
+time="2025-01-12T13:01:42+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!! Check it out!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T13:06:57+05:00" level=debug msg="Received file. Before save." Filename: =Figure_1.png Header: ="map[Content-Disposition:[form-data; name=\"file\"; filename=\"Figure_1.png\"] Content-Type:[image/png]]" Size: =161399 function=SendMail package=home_handler
+time="2025-01-12T13:07:04+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!! Check it out!!!" to=viktorsuprunov9@gmail.com
+time="2025-01-12T13:17:52+05:00" level=info msg="STARTED!!" fields.msg=HEY status="OK!"
+time="2025-01-12T13:17:53+05:00" level=warning msg="Set log level to debug"
+time="2025-01-12T13:18:13+05:00" level=debug msg="Received file. Before save." Filename: =Figure_1.png Header: ="map[Content-Disposition:[form-data; name=\"file\"; filename=\"Figure_1.png\"] Content-Type:[image/png]]" Size: =161399 function=SendMail package=home_handler
+time="2025-01-12T13:18:20+05:00" level=info msg="Email sent successfully" from=suprunoviktor@gmail.com function=SendMail package=home_handler subject="Hey I got a new graph!!! Check it out!!!" to=viktorsuprunov9@gmail.com

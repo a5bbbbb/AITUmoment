@@ -2,28 +2,26 @@
       hx-get="/threads" 
       hx-target="#thread-list" 
       hx-swap="innerHTML"
-      hx-indicator=".htmx-indicator">
-    <input type="text" name="search" placeholder="Search threads...">
-    <input type="number" name="creator_id" placeholder="Creator ID">
-    <input type="date" name="start_date">
-    <input type="date" name="end_date">
-    <input type="number" name="min_upvotes" placeholder="Minimum upvotes">
-    <label for="order_by">Sort by </label>
-    <select name="order_by">
-     <option value="">No sort</option>
-     <option value="creator_id">user id</option>
-     <option value="create_date">creation date</option>
-     <option value="up_votes">up votes</option>
-   </select>
-   <select name="order">
-     <option value="DESC">descending</option>
-     <option value="ASC">ascending</option>
-   </select>
-    <button type="submit">Filter</button>
+      hx-indicator=".htmx-indicator"
+      hx-trigger="submit">
+  <input type="text" name="search" placeholder="Search threads...">
+  <input type="number" name="creator_id" placeholder="Creator ID">
+  <input type="date" name="start_date">
+  <input type="date" name="end_date">
+  <input type="number" name="min_upvotes" placeholder="Minimum upvotes">
+  <label for="order_by">Sort by </label>
+  <select name="order_by">
+    <option value="">No sort</option>
+    <option value="creator_id">user id</option>
+    <option value="create_date">creation date</option>
+    <option value="up_votes">up votes</option>
+  </select>
+  <select name="order">
+    <option value="ASC">ascending</option>
+    <option value="DESC">descending</option>
+  </select>
+  <button type="submit">Filter</button>
 </form>
 
-<div id="thread-list"
-     hx-get="/threads"
-     hx-trigger="load"
-     hx-swap="innerHTML">
+<div id="thread-list">
 </div>

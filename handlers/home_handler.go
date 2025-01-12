@@ -3,20 +3,20 @@ package handlers
 import (
 	"aitu-moment/db/repository"
 	"aitu-moment/models"
+	"mime/multipart"
 	"net/http"
-	"net/smtp"
 	"os"
+	"path/filepath"
 	"strconv"
-	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/go-gomail/gomail"
 	"github.com/sirupsen/logrus"
 )
 
 var log = logrus.New()
 
 func init() {
-
 	file, err := os.OpenFile("logrus.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err == nil {
 		log.Out = file
@@ -25,13 +25,14 @@ func init() {
 	}
 }
 
-type Thread struct {
-	ID             int64     `db:"thread_id" json:"id"`
-	CreatorID      int64     `db:"creator_id" json:"creator_id"`
-	Content        string    `db:"content" json:"content"`
-	CreateDate     time.Time `db:"create_date" json:"create_date"`
-	UpVotes        int       `db:"up_votes" json:"up_votes"`
-	ParentThreadID *int64    `db:"parent_thread_id" json:"parent_thread_id,omitempty"`
+func SetLogLevelFromEnv() {
+	level, err := strconv.Atoi(os.Getenv("LOG_LEVEL"))
+	if err != nil {
+		log.Error("Cannot set log level from .env. Error converting to int.")
+		return
+	}
+	log.SetLevel(logrus.Level(level))
+	log.Warn("Set log level to " + logrus.Level(level).String())
 }
 
 type UserHandler struct {
@@ -39,6 +40,7 @@ type UserHandler struct {
 }
 
 func NewUserHandler(repo *repository.UserRepository) *UserHandler {
+	SetLogLevelFromEnv()
 	return &UserHandler{repo: repo}
 }
 
@@ -61,102 +63,6 @@ func (h *UserHandler) GetHome(c *gin.Context) {
 		"users": users,
 	})
 
-}
-
-func (h *UserHandler) GetThreads(c *gin.Context) {
-
-	log.Info("Starting to fetch threads")
-
-	filter := parseThreadFilter(c)
-	log.WithFields(logrus.Fields{
-		"page":       filter.Page,
-		"page_size":  filter.PageSize,
-		"search":     filter.Search,
-		"creator_id": filter.CreatorID,
-	}).Debug("Parsed thread filter")
-
-	threads, totalCount, err := h.repo.FetchThreads(filter)
-	if err != nil {
-		log.WithError(err).Error("Failed to fetch threads")
-		c.HTML(http.StatusInternalServerError, "error.html", gin.H{
-			"error": "Failed to fetch threads",
-		})
-		return
-	}
-
-	log.WithFields(logrus.Fields{
-		"thread_count": len(threads),
-		"total_count":  totalCount,
-	}).Info("Successfully fetched threads")
-
-	totalPages := (totalCount + filter.PageSize - 1) / filter.PageSize
-	hasNextPage := filter.Page < totalPages
-	hasPrevPage := filter.Page > 1
-	log.Info("Rendering full page response")
-
-	c.HTML(http.StatusOK, "threads.html", gin.H{
-		"threads":     threads,
-		"currentPage": filter.Page,
-		"totalPages":  totalPages,
-		"hasNextPage": hasNextPage,
-		"hasPrevPage": hasPrevPage,
-		"prevPage":    max(filter.Page-1, 0),
-		"nextPage":    min(filter.Page+1, totalPages),
-		"filter":      filter,
-	})
-
-	log.Info("Rendering HTMX partial response")
-	c.HTML(http.StatusOK, "thread-list.html", gin.H{
-		"threads":     threads,
-		"currentPage": filter.Page,
-		"totalPages":  totalPages,
-		"hasNextPage": hasNextPage,
-		"prevPage":    max(filter.Page-1, 0),
-		"nextPage":    min(filter.Page+1, totalPages),
-		"hasPrevPage": hasPrevPage,
-	})
-
-}
-
-func parseThreadFilter(c *gin.Context) repository.ThreadFilter {
-	filter := repository.ThreadFilter{
-		Page:     1,
-		PageSize: 10,
-	}
-
-	if page, err := strconv.Atoi(c.DefaultQuery("page", "1")); err == nil && page > 0 {
-		filter.Page = page
-	}
-	if pageSize, err := strconv.Atoi(c.DefaultQuery("pageSize", "10")); err == nil && pageSize > 0 {
-		filter.PageSize = pageSize
-	}
-
-	if creatorID, err := strconv.ParseInt(c.Query("creator_id"), 10, 64); err == nil {
-		filter.CreatorID = &creatorID
-	}
-
-	if parentID, err := strconv.ParseInt(c.Query("parent_id"), 10, 64); err == nil {
-		filter.ParentThreadID = &parentID
-	}
-
-	if startDate, err := time.Parse("2006-01-02", c.Query("start_date")); err == nil {
-		filter.StartDate = &startDate
-	}
-	if endDate, err := time.Parse("2006-01-02", c.Query("end_date")); err == nil {
-		filter.EndDate = &endDate
-	}
-
-	if minUpVotes, err := strconv.Atoi(c.Query("min_upvotes")); err == nil {
-		filter.MinUpVotes = &minUpVotes
-	}
-
-	filter.Search = c.Query("search")
-	order := c.Query("order")
-	filter.Order = &order
-	orderby := c.Query("order_by")
-	filter.OrderBy = &orderby
-
-	return filter
 }
 
 func (h *UserHandler) SaveUser(c *gin.Context) {
@@ -198,42 +104,93 @@ func (h *UserHandler) SaveUser(c *gin.Context) {
 
 }
 
+type Form struct {
+	Receiver string                `form:"receiver" binding:"required`
+	Message  string                `form:"message" binding:"required`
+	File     *multipart.FileHeader `form:"file" binding:"required"`
+}
+
+/*
+enctype="multipart/form-data"
+always include this attribute into the <form> tag from which the file is send.
+Otherwise gin does not expect a file to be a form parameter.
+*/
 func (h *UserHandler) SendMail(c *gin.Context) {
+	logThis := log.WithFields(logrus.Fields{
+		"package":  "home_handler",
+		"function": "SendMail",
+	})
 
-	smtpHost := "smtp.gmail.com"
-	smtpPort := "587"
-
-	from := "suprunoviktor@gmail.com"
-	pass := "nfrf gnuf ndtg mvoh"
-
-	email := "seraf5@bk.ru"
-	log.Info(email)
-	msg := c.PostForm("message")
-
-	auth := smtp.PlainAuth("", from, pass, smtpHost)
-
-	logrus.WithFields(logrus.Fields{
-		"from":    from,
-		"to":      email,
-		"subject": msg,
-	}).Info("Sending email started")
-
-	err := smtp.SendMail(smtpHost+":"+smtpPort, auth, from, []string{email}, []byte(msg))
+	host := os.Getenv("MAIL_HOST")
+	port, err := strconv.Atoi(os.Getenv("MAIL_HOST_PORT"))
 	if err != nil {
-		logrus.WithFields(logrus.Fields{
+		logThis.Error("Failed to convert port value to int.")
+		getErrorResponse(c, err.Error())
+		return
+	}
+
+	from := os.Getenv("MAIL_SENDER")
+	pass := os.Getenv("MAIL_PASSWORD")
+	pathToUploads := os.Getenv("UPLOADS_PATH")
+
+	var form Form
+
+	// form.Message = c.PostForm("message")
+	// form.Receiver = c.PostForm("receiver")
+
+	// // Source
+	// form.File, err = c.FormFile("file")
+	// if err != nil {
+	// 	log.Error("Bad request or file is incorrect: ", err)
+	// }
+
+	err = c.ShouldBind(&form)
+
+	if err != nil {
+		logThis.Error("Unable to bind form values to form struct.")
+		getErrorResponse(c, err.Error())
+		return
+	}
+	m := gomail.NewMessage()
+	m.SetHeader("From", from)
+	m.SetHeader("To", form.Receiver)
+	m.SetHeader("Subject", "Hello!")
+	m.SetBody("text/html", "This is an automatic message send to you from AITUmoment! This is the content:<br>"+form.Message+"<br>Nothing else here!")
+	if form.File != nil {
+		pathToFile := filepath.Join(pathToUploads, filepath.Base(form.File.Filename))
+
+		logThis.WithFields(logrus.Fields{
+			"Filename: ": form.File.Filename,
+			"Header: ":   form.File.Header,
+			"Size: ":     form.File.Size,
+		}).Debug("Received file. Before save.")
+
+		c.SaveUploadedFile(form.File, pathToFile)
+
+		m.Attach(pathToFile)
+
+		m.SetBody("text/html", "This is an automatic message send to you from AITUmoment! This is the content:<br>"+form.Message+"Checkout the attachment!")
+	} else {
+		logThis.Debug("No file received.")
+	}
+
+	d := gomail.NewDialer(host, port, from, pass)
+
+	if err := d.DialAndSend(m); err != nil {
+		logThis.WithFields(logrus.Fields{
 			"from":    from,
-			"to":      email,
-			"subject": msg,
+			"to":      form.Receiver,
+			"subject": form.Message,
 			"error":   err.Error(),
 		}).Error("Failed to send email")
 		getErrorResponse(c, err.Error())
 		return
 	}
 
-	log.WithFields(logrus.Fields{
+	logThis.WithFields(logrus.Fields{
 		"from":    from,
-		"to":      email,
-		"subject": msg,
+		"to":      form.Receiver,
+		"subject": form.Message,
 	}).Info("Email sent successfully")
 
 	c.HTML(http.StatusOK, "email.html", gin.H{})
@@ -241,7 +198,6 @@ func (h *UserHandler) SendMail(c *gin.Context) {
 
 func (h *UserHandler) GetMail(c *gin.Context) {
 	c.HTML(http.StatusOK, "email.html", gin.H{})
-
 }
 
 func getErrorResponse(c *gin.Context, errMessage string) {

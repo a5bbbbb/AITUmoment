@@ -1,0 +1,8 @@
+{{ if .group_list }}
+<select name="group" id="groups">
+    {{ range .group_list }}
+    <option value={{.Id}}>{{.GroupName}}</option>
+    {{ end }}
+</select>
+
+{{ end }}

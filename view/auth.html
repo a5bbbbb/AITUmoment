@@ -1,0 +1,55 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx-ext-response-targets@2.0.0/response-targets.js"></script>
+    <script>
+        document.body.addEventListener('htmx:beforeRequest', function(evt) {
+            console.log("HTMX request starting:", evt.detail);
+        });
+    </script>
+
+</head>
+<section 
+    hx-ext="response-targets">
+    <h1>Login</h1>
+    <br>
+
+    {{ if .fromLoginName }}
+    <span>Now login please, {{ .fromLoginName }}</span>
+    {{ end }}
+
+    <form 
+
+        hx-post="/login"
+        hx-target="section"
+        hx-target-4*="section"
+        hx-swap="outerHTML">
+        <input type="email" name="email" placeholder="Email..">
+        <input type="text" name="passwd" placeholder="Password...">
+        <button>Login</button>
+    </form>
+
+    <br>
+
+    <button 
+        hx-target="section" 
+        hx-get="/register"
+        hx-swap= "outerHTML"
+        >Register</button>
+
+
+        {{ if .error }}
+        <div class="error">{{ .error }}</div>
+        {{ end }}
+
+
+</section>
+
+
+
+
+
+

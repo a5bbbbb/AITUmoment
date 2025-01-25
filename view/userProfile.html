@@ -1,0 +1,52 @@
+<section
+    hx-ext="response-targets">
+    <h1>Hey, {{.user.Name}}!</h1>
+    <span>You can change your profile</span>
+
+
+    <form 
+        hx-put="/user"
+        hx-target="section"
+        hx-target-4*="section"
+        hx-swap="outerHTML">
+        <input type="hidden" name="id" value = {{ .user.Id }}>
+        <input type="text" name="username" value={{ .user.Name }} >
+        <input type="text" name="passwd" value={{ .user.Passwd }}>
+        <input type="email" name="email" value={{ .user.Email }}>
+        <input type="text" name="public_name" value={{ .user.PublicName }}>
+        <input type="textarea" name="bio" value={{ .user.Bio }}>
+
+        <select 
+            hx-trigger="change"
+            hx-get="/groupsList"
+            hx-target="#groupsList"
+            hx-swap="innerHTML"
+            name="educational_program" 
+            id="educational_program"
+            >
+            <option value={{ .user.EducationalProgram }}>{{ .user.ProgramName }}</option>
+            {{ range .edu_list }}
+            <option value={{.Id}}>{{.Name}}</option>
+            {{ end }}
+        </select>
+
+
+        <div id="groupsList">
+            {{ if .group }}
+            <select name="group" id="groups">
+                <option value={{.group.Id}}>{{.group.GroupName}}</option>
+            </select>
+
+            {{ end }}
+        </div>
+
+        <button>Save</button>
+
+    </form>
+
+    {{ if .error }}
+    <div class="error">{{ .error }}</div>
+    {{ end }}
+
+
+</section>

@@ -1,0 +1,51 @@
+<section
+    hx-ext="response-targets">
+    <h1>Register</h1>
+    <br>
+
+    <form 
+        hx-post="/register"
+        hx-target="section"
+        hx-target-4*="section"
+        hx-swap="outerHTML">
+        <input type="text" name="username" placeholder="Username..">
+        <input type="text" name="passwd" placeholder="Password...">
+        <input type="email" name="email" placeholder="Email..">
+        <input type="text" name="public_name" placeholder="Public name...">
+
+        <select 
+            hx-trigger="change"
+            hx-get="/groupsList"
+            hx-target="#groupsList"
+            hx-swap="innerHTML"
+            name="educational_program" 
+            id="educational_program"
+            >
+            <option value="0">Select your educational program</option>
+            {{ range .edu_list }}
+            <option value={{.Id}}>{{.Name}}</option>
+            {{ end }}
+        </select>
+
+
+        <div id="groupsList">
+        </div>
+
+        <button>Register</button>
+
+    </form>
+
+    <br>
+
+    <button 
+        hx-target="section" 
+        hx-get="/login"
+        hx-swap= "outerHTML"
+        >Login
+    </button>
+
+    {{ if .error }}
+    <div class="error">{{ .error }}</div>
+    {{ end }}
+
+</section>

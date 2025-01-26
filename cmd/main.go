@@ -26,7 +26,7 @@ func main() {
 	logger.GetLogger().Info("Setting up gin engine...")
 	engine := gin.Default()
 
-	engine.LoadHTMLGlob("/Users/serafimbronnikov/Desktop/AITUmoment/AITUmoment/view/*")
+	engine.LoadHTMLGlob("./view/*")
 
 	registerRoutes(engine)
 

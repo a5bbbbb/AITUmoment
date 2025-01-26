@@ -2,32 +2,29 @@ package utils
 
 import (
 	"fmt"
-	"log"
-	"path/filepath"
 	"github.com/golang-migrate/migrate/v4"
 	_ "github.com/golang-migrate/migrate/v4/database/postgres"
- 	_ "github.com/golang-migrate/migrate/v4/source/file"
+	_ "github.com/golang-migrate/migrate/v4/source/file"
+	"log"
+	"path/filepath"
 )
-
 
 var migrationPath string
 
-
-func init(){
-    var err error
-    migrationPath,err = getMigrationsPath()
-    if err != nil {
-        log.Print("Failed to get migration path, %w", err)
-    }
+func init() {
+	var err error
+	migrationPath, err = getMigrationsPath()
+	if err != nil {
+		log.Print("Failed to get migration path, %w", err)
+	}
 
 }
 
-
 func RunMigrations(connectionString string) error {
-    sourceURL := "file://" + filepath.ToSlash(migrationPath)
-    fmt.Println(sourceURL)
-    fmt.Println("YOU")
-    fmt.Println(connectionString)
+	sourceURL := "file://" + filepath.ToSlash(migrationPath)
+	fmt.Println(sourceURL)
+	fmt.Println("YOU")
+	fmt.Println(connectionString)
 	m, err := migrate.New(sourceURL, connectionString)
 	if err != nil {
 		fmt.Printf("Migration error: %v\n", err)
@@ -73,21 +70,6 @@ func RunMigrations(connectionString string) error {
 	return nil
 }
 
-
-
-
 func getMigrationsPath() (string, error) {
-	// _, b, _, ok := runtime.Caller(0)
-	// if !ok {
-	// 	return "", errors.New("failed to get caller information")
-	// }
-
-    return "/Users/serafimbronnikov/Desktop/AITUmoment/AITUmoment/db/migrations",nil
-
-	// return filepath.Join(filepath.Dir(b), "migrations"), nil
+	return "./db/migrations", nil
 }
-
-
-
-
-

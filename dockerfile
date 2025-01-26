@@ -27,7 +27,6 @@ COPY --from=builder /app/main .
 # Copy necessary application files
 COPY view/ view/
 COPY db/migrations/ db/migrations/
-COPY .env .env
 
 # Create directory for logs
 RUN mkdir -p /app/logs

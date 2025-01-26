@@ -19,7 +19,8 @@
     <h1>Hello, honest authorized man! {{.name}}</h1>
 
 
-    <button hx-target="section" hx-target-4*="section" hx-post="/logout">Logout</button>
+    <button hx-swap="outerHTML" hx-target="section" hx-target-4*="section" hx-post="/logout">Logout</button>
+    <button hx-swap="outerHTML" hx-target="section" hx-target-4*="section" hx-get="/user">Profile</button>
 
     {{ if .error }}
     <div class="error">{{ .error }}</div>

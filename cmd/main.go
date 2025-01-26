@@ -44,6 +44,7 @@ func registerRoutes(e *gin.Engine) {
 	e.Use(authMiddleware.AuthMiddleware)
 	e.GET("/", authHandler.MainPage)
 	e.PUT("/user", authHandler.UpdateUser)
+	e.GET("/user", authHandler.ProfilePage)
 	e.POST("/logout", authHandler.Logout)
 
 }

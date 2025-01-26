@@ -13,229 +13,214 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-
 type AuthHandler struct {
-    userService *services.UserService
-    eduService  *services.EduService
-    groupService *services.GroupService
+	userService  *services.UserService
+	eduService   *services.EduService
+	groupService *services.GroupService
 }
 
-
-
-func NewAuthHandler() *AuthHandler{
-    return &AuthHandler{
-        userService: services.NewUserService(),
-        eduService: services.NewEduService(),
-        groupService: services.NewGroupService(),
-    }
+func NewAuthHandler() *AuthHandler {
+	return &AuthHandler{
+		userService:  services.NewUserService(),
+		eduService:   services.NewEduService(),
+		groupService: services.NewGroupService(),
+	}
 }
 
-func(h *AuthHandler) MainPage(c *gin.Context){
-    value,exists := c.Get("claims")
-    if !exists{
-        logger.GetLogger().Info("claims are inexistant")
-        c.HTML(http.StatusOK,"index.html", nil)
-        return
-    }
+func (h *AuthHandler) MainPage(c *gin.Context) {
+	userID, err := utils.GetUserFromClaims(c)
 
-    claims, ok := value.(jwt.MapClaims)
-    if !ok{
-        logger.GetLogger().Info("error claims parse")
-        c.HTML(http.StatusOK,"index.html", nil)
-        return
-    }
+	if err != nil {
+		logger.GetLogger().Errorf("Error during getting claims in main page %v", err.Error())
+		c.HTML(http.StatusInternalServerError, "index.html", nil)
+		return
+	}
 
+	user, _, _, err := h.userService.GetFullUserInfo(*userID)
 
-    userInfo, exists := claims["user"].(map[string]interface{})
-    if !exists {
-        logger.GetLogger().Info("user does not exists")
-        c.HTML(http.StatusOK,"index.html", nil)
-        return
-    }
+	if err != nil {
+		logger.GetLogger().Errorf("Error during getting userInfo in main page %v", err.Error())
+		c.HTML(http.StatusInternalServerError, "index.html", nil)
+		return
+	}
 
-    c.HTML(http.StatusOK,"home.html", gin.H{
-        "name": userInfo["name"].(string),
-    })
+	c.HTML(http.StatusOK, "home.html", gin.H{
+		"name": user.Name,
+	})
 
 }
 
-func (h *AuthHandler) AuthPage(c *gin.Context){
-    c.HTML(http.StatusOK,"auth.html", nil)
+func (h *AuthHandler) AuthPage(c *gin.Context) {
+	c.HTML(http.StatusOK, "auth.html", nil)
 }
 
-func(h *AuthHandler) RegisterPage(c *gin.Context){
-    programs,err := h.eduService.GetPrograms()
-    if err != nil {
-        logger.GetLogger().Errorf("Erorr during getting register page %v", err.Error())
-        c.HTML(http.StatusBadRequest, "register.html", gin.H{
-            "error": "You are a filty little hoe",
-        })
-        return
-    }
+func (h *AuthHandler) RegisterPage(c *gin.Context) {
+	programs, err := h.eduService.GetPrograms()
+	if err != nil {
+		logger.GetLogger().Errorf("Erorr during getting register page %v", err.Error())
+		c.HTML(http.StatusBadRequest, "register.html", gin.H{
+			"error": "You are a filty little hoe",
+		})
+		return
+	}
 
-    c.HTML(http.StatusOK, "register.html",gin.H{
-        "edu_list": programs,
-    })
+	c.HTML(http.StatusOK, "register.html", gin.H{
+		"edu_list": programs,
+	})
 }
 
-func(h *AuthHandler) GroupsListPage(c *gin.Context){
-    eduProgStr := c.Query("educational_program")
+func (h *AuthHandler) GroupsListPage(c *gin.Context) {
+	eduProgStr := c.Query("educational_program")
 
-    eduProg, err := strconv.Atoi(eduProgStr)
-    if err != nil {
-        c.HTML(http.StatusBadRequest,"register.html", gin.H{"error": "Invalid id parameter"})
-        return
-    }
+	eduProg, err := strconv.Atoi(eduProgStr)
+	if err != nil {
+		c.HTML(http.StatusBadRequest, "register.html", gin.H{"error": "Invalid id parameter"})
+		return
+	}
 
-    groups,err := h.groupService.GetGroups(uint8(eduProg))
-    if err != nil {
-        logger.GetLogger().Errorf("Erorr during getting register page %v", err.Error())
-        c.HTML(http.StatusBadRequest, "register.html", gin.H{
-            "error": "You are a filty little hoe",
-        })
-        return
-    }
+	groups, err := h.groupService.GetGroups(uint8(eduProg))
+	if err != nil {
+		logger.GetLogger().Errorf("Erorr during getting register page %v", err.Error())
+		c.HTML(http.StatusBadRequest, "register.html", gin.H{
+			"error": "You are a filty little hoe",
+		})
+		return
+	}
 
-    if len(groups) > 0 {
-        logger.GetLogger().Info("Got groups")
-        c.HTML(http.StatusOK, "groupsList.html", gin.H{
-            "group_list": groups,
-        })
-    }
+	if len(groups) > 0 {
+		logger.GetLogger().Info("Got groups")
+		c.HTML(http.StatusOK, "groupsList.html", gin.H{
+			"group_list": groups,
+		})
+	}
 }
 
-func(h *AuthHandler) Logout(c *gin.Context){
-     c.SetCookie("auth_token", "", -1, "/", "", false, true)
-     c.Set("claims", nil)
-     c.Redirect(http.StatusFound, "/login")
+func (h *AuthHandler) Logout(c *gin.Context) {
+	c.SetCookie("auth_token", "", -1, "/", "", false, true)
+	c.Set("claims", nil)
+	c.Redirect(http.StatusFound, "/login")
 }
 
+func (h *AuthHandler) ProfilePage(c *gin.Context) {
 
-func(h *AuthHandler) UpdateUser(c *gin.Context){
+	userID, err := utils.GetUserFromClaims(c)
 
-    var user *models.User
-    if err := c.ShouldBind(&user); err != nil {
-        logger.GetLogger().Errorf("Error during bind in update handler %v", err.Error())
-        c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
-            "error": "You are a filty little hoe",
-        })
-        return;
-    }
+	if err != nil {
+		logger.GetLogger().Errorf("Error during getting claims in profile page %v", err.Error())
+		c.HTML(http.StatusBadRequest, "auth.html", nil)
+		return
+	}
 
-    user,err := h.userService.UpdateUser(user)
-    if err != nil {
-        logger.GetLogger().Errorf("Error during updating user %v", err.Error())
-        c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
-            "error": "You are a filty little hoe",
-        })
-        return;
-    }
+	user, programs, group, err := h.userService.GetFullUserInfo(*userID)
 
+	if err != nil {
+		c.HTML(http.StatusBadRequest, "auth.html", gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
 
-    user,programs,group,err := h.userService.GetFullUserInfo(user.Id)
-
-
-    if err != nil {
-        logger.GetLogger().Errorf("Error during getting user info %v", err.Error())
-        c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
-            "error": "You are a filty little hoe",
-        })
-        return;
-    }
-
-    c.HTML(http.StatusOK,"userProfile.html", gin.H{
-        "user": user,
-        "edu_list": programs,
-        "group": group,
-    })
+	c.HTML(http.StatusOK, "userProfile.html", gin.H{
+		"user":     user,
+		"edu_list": programs,
+		"group":    group,
+	})
 }
 
-func(h *AuthHandler) Register(c *gin.Context){
+func (h *AuthHandler) UpdateUser(c *gin.Context) {
 
-    var user *models.User
-    if err := c.ShouldBind(&user); err != nil {
-        logger.GetLogger().Errorf("Error during bind in registration %v", err.Error())
-        c.HTML(http.StatusBadRequest, "register.html", gin.H{
-            "error": "You are a filty little hoe",
-        })
-        return;
-    }
+	var user *models.User
+	if err := c.ShouldBind(&user); err != nil {
+		logger.GetLogger().Errorf("Error during bind in update handler %v", err.Error())
+		c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
+			"error": "You are a filty little hoe",
+		})
+		return
+	}
 
-    user,err := h.userService.CreateUser(user)
+	user, err := h.userService.UpdateUser(user)
+	if err != nil {
+		logger.GetLogger().Errorf("Error during updating user %v", err.Error())
+		c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
+			"error": "You are a filty little hoe",
+		})
+		return
+	}
 
-    if err != nil {
-        logger.GetLogger().Errorf("Error during registration %v", err.Error())
-        c.HTML(http.StatusBadRequest, "register.html", gin.H{
-            "error": "You are a filty little hoe",
-        })
-        return;
-    }
+	user, programs, group, err := h.userService.GetFullUserInfo(user.Id)
 
-    c.HTML(http.StatusOK,"auth.html", gin.H{
-        "fromLoginName": user.PublicName,
-    })
+	if err != nil {
+		logger.GetLogger().Errorf("Error during getting user info %v", err.Error())
+		c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
+			"error": "You are a filty little hoe",
+		})
+		return
+	}
+
+	c.HTML(http.StatusOK, "userProfile.html", gin.H{
+		"user":     user,
+		"edu_list": programs,
+		"group":    group,
+	})
 }
 
+func (h *AuthHandler) Register(c *gin.Context) {
 
-func (h *AuthHandler) Login(c *gin.Context){
+	var user *models.User
+	if err := c.ShouldBind(&user); err != nil {
+		logger.GetLogger().Errorf("Error during bind in registration %v", err.Error())
+		c.HTML(http.StatusBadRequest, "register.html", gin.H{
+			"error": "You are a filty little hoe",
+		})
+		return
+	}
 
-    email,_ := c.GetPostForm("email")
-    passwd,_ := c.GetPostForm("passwd")
+	user, err := h.userService.CreateUser(user)
 
-    user, err := h.userService.Authorize(email, passwd)
+	if err != nil {
+		logger.GetLogger().Errorf("Error during registration %v", err.Error())
+		c.HTML(http.StatusBadRequest, "register.html", gin.H{
+			"error": "You are a filty little hoe",
+		})
+		return
+	}
 
-    if err != nil || user == nil{
-        c.HTML(http.StatusUnauthorized, "auth.html", gin.H{
-            "error": "Invalid credentials!",
-        })
-        return;
-    }
-
-    token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-        "exp":      time.Now().Add(time.Hour * 1).Unix(),
-        "user":     user,
-    })
-
-    tokenString, err := token.SignedString([]byte(utils.GetFromEnv("JWT_SECRET", "super_duper")))
-    if err != nil {
-            c.HTML(http.StatusBadRequest, "auth.html", gin.H{
-                "error": err.Error(),
-            })
-        return
-    }
-
-    c.SetCookie("auth_token", tokenString, 3600*24, "/", "", false, true)
-
-
-    c.HTML(http.StatusOK,"home.html", gin.H{
-        "name": user.Name,
-    })
-
-    //THIS ONE is for the updating user profile
-    // user,programs,group,err := h.userService.GetFullUserInfo(user.Id)
-    //
-    //
-    // if err != nil {
-    //         c.HTML(http.StatusBadRequest, "auth.html", gin.H{
-    //             "error": err.Error(),
-    //         })
-    //     return
-    // }
-    //
-    // c.HTML(http.StatusOK,"userProfile.html", gin.H{
-    //     "user": user,
-    //     "edu_list": programs,
-    //     "group": group,
-    // })
-
+	c.HTML(http.StatusOK, "auth.html", gin.H{
+		"fromLoginName": user.PublicName,
+	})
 }
 
+func (h *AuthHandler) Login(c *gin.Context) {
 
+	email, _ := c.GetPostForm("email")
+	passwd, _ := c.GetPostForm("passwd")
 
+	user, err := h.userService.Authorize(email, passwd)
 
+	if err != nil || user == nil {
+		c.HTML(http.StatusUnauthorized, "auth.html", gin.H{
+			"error": "Invalid credentials!",
+		})
+		return
+	}
 
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+		"exp":    time.Now().Add(time.Hour * 1).Unix(),
+		"userID": user.Id,
+	})
 
+	tokenString, err := token.SignedString([]byte(utils.GetFromEnv("JWT_SECRET", "super_duper")))
+	if err != nil {
+		c.HTML(http.StatusBadRequest, "auth.html", gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
 
+	c.SetCookie("auth_token", tokenString, 3600*24, "/", "", false, true)
 
+	c.HTML(http.StatusOK, "home.html", gin.H{
+		"name": user.Name,
+	})
 
-
+}

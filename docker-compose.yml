@@ -5,7 +5,7 @@ services:
       - "8080:8080"
     env_file: .env
     volumes:
-      - ./logs:/var/log
+      - /var/log:/app/logs
     depends_on:
       db:
         condition: service_healthy

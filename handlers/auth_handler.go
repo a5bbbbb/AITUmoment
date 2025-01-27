@@ -27,31 +27,18 @@ func NewAuthHandler() *AuthHandler {
 	}
 }
 
-func (h *AuthHandler) MainPage(c *gin.Context) {
+func (h *AuthHandler) AuthPage(c *gin.Context) {
+
 	userID, err := utils.GetUserFromClaims(c)
 
-	if err != nil {
-		logger.GetLogger().Errorf("Error during getting claims in main page %v", err.Error())
-		c.HTML(http.StatusInternalServerError, "index.html", nil)
+	if err != nil || userID == nil {
+		logger.GetLogger().Errorf("Error during getting claims in profile page %v", err.Error())
+		c.HTML(http.StatusOK, "auth.html", nil)
 		return
 	}
 
-	user, _, _, err := h.userService.GetFullUserInfo(*userID)
+	c.Redirect(http.StatusFound, "/")
 
-	if err != nil {
-		logger.GetLogger().Errorf("Error during getting userInfo in main page %v", err.Error())
-		c.HTML(http.StatusInternalServerError, "index.html", nil)
-		return
-	}
-
-	c.HTML(http.StatusOK, "home.html", gin.H{
-		"name": user.Name,
-	})
-
-}
-
-func (h *AuthHandler) AuthPage(c *gin.Context) {
-	c.HTML(http.StatusOK, "auth.html", nil)
 }
 
 func (h *AuthHandler) RegisterPage(c *gin.Context) {
@@ -219,8 +206,10 @@ func (h *AuthHandler) Login(c *gin.Context) {
 
 	c.SetCookie("auth_token", tokenString, 3600*24, "/", "", false, true)
 
-	c.HTML(http.StatusOK, "home.html", gin.H{
-		"name": user.Name,
-	})
+	// c.HTML(http.StatusOK, "home.html", gin.H{
+	// 	"name": user.Name,
+	// })
+
+	c.Redirect(http.StatusFound, "/")
 
 }

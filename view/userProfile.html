@@ -1,56 +1,70 @@
-<section
-    hx-ext="response-targets">
-    <h1>Hey, {{.user.Name}}!</h1>
-    <span>You can change your profile</span>
+<section class="min-h-screen bg-black" hx-ext="response-targets">
+   <nav class="bg-gray-900 border-b border-gray-800 py-4 px-6 mb-8">
+       <div class="max-w-6xl mx-auto flex justify-between items-center">
+           <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">Profile Settings</h1>
+           <button class="px-4 py-2 text-gray-300 hover:text-white transition-colors" hx-get="/" hx-target="section" hx-swap="outerHTML">Back to Home</button>
+       </div>
+   </nav>
 
+   <div class="max-w-2xl mx-auto px-4">
+       <div class="bg-gray-900 rounded-2xl p-8 border border-gray-800">
+           <h2 class="text-2xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">Hey, {{.user.Name}}!</h2>
 
-    <form 
-        hx-put="/user"
-        hx-target="section"
-        hx-target-4*="section"
-        hx-swap="outerHTML">
-        <input type="hidden" name="id" value = {{ .user.Id }}>
-        <input type="text" name="username" value={{ .user.Name }} >
-        <input type="text" name="passwd" value={{ .user.Passwd }}>
-        <input type="email" name="email" value={{ .user.Email }}>
-        <input type="text" name="public_name" value={{ .user.PublicName }}>
-        <input type="textarea" name="bio" value={{ .user.Bio }}>
+           <form class="space-y-6" hx-put="/user" hx-target="section" hx-target-4*="section" hx-swap="outerHTML">
+               <input type="hidden" name="id" value={{ .user.Id }}>
+               
+               <div class="grid grid-cols-2 gap-4">
+                   <div class="space-y-2">
+                       <label class="text-sm text-gray-500">Username</label>
+                       <input type="text" name="username" value={{ .user.Name }} class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-red-500 bg-black text-white border-gray-800">
+                   </div>
+                   <div class="space-y-2">
+                       <label class="text-sm text-gray-500">Public Name</label>
+                       <input type="text" name="public_name" value={{ .user.PublicName }} class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-red-500 bg-black text-white border-gray-800">
+                   </div>
+               </div>
 
-        <select 
-            hx-trigger="change"
-            hx-get="/groupsList"
-            hx-target="#groupsList"
-            hx-swap="innerHTML"
-            name="educational_program" 
-            id="educational_program"
-            >
-            <option value={{ .user.EducationalProgram }}>{{ .user.ProgramName }}</option>
-            {{ range .edu_list }}
-            <option value={{.Id}}>{{.Name}}</option>
-            {{ end }}
-        </select>
+               <div class="space-y-2">
+                   <label class="text-sm text-gray-500">Email</label>
+                   <input type="email" name="email" value={{ .user.Email }} class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-red-500 bg-black text-white border-gray-800">
+               </div>
 
+               <div class="space-y-2">
+                   <label class="text-sm text-gray-500">Password</label>
+                   <input type="password" name="passwd" value={{ .user.Passwd }} class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-red-500 bg-black text-white border-gray-800">
+               </div>
 
-        <div id="groupsList">
-            {{ if .group }}
-            <select name="group" id="groups">
-                <option value={{.group.Id}}>{{.group.GroupName}}</option>
-            </select>
+               <div class="space-y-2">
+                   <label class="text-sm text-gray-500">Bio</label>
+                   <textarea name="bio" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-red-500 bg-black text-white border-gray-800 min-h-[100px] resize-none">{{ .user.Bio }}</textarea>
+               </div>
 
-            {{ end }}
-        </div>
+               <div class="space-y-2">
+                   <label class="text-sm text-gray-500">Program</label>
+                   <select name="educational_program" id="educational_program" 
+                           class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-red-500 bg-black text-white border-gray-800 appearance-none cursor-pointer"
+                           hx-trigger="change"
+                           hx-get="/groupsList"
+                           hx-target="#groupsList"
+                           hx-swap="innerHTML">
+                       <option value={{ .user.EducationalProgram }} class="bg-black">{{ .user.ProgramName }}</option>
+                       {{ range .edu_list }}
+                       <option value={{.Id}} class="bg-black">{{.Name}}</option>
+                       {{ end }}
+                   </select>
+               </div>
 
-        <button>Save</button>
+               <div id="groupsList" class="space-y-2">
+                   {{ if .group }}
+                   <label class="text-sm text-gray-500">Group</label>
+                   <select name="group" id="groups" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-red-500 bg-black text-white border-gray-800 appearance-none cursor-pointer">
+                       <option value={{.group.Id}} class="bg-black">{{.group.GroupName}}</option>
+                   </select>
+                   {{ end }}
+               </div>
 
-    </form>
-
-    {{ if .error }}
-    <div class="error">{{ .error }}</div>
-    {{ end }}
-
-
-
-    <button hx-swap="outerHTML" hx-target="section" hx-target-4*="section" hx-get="/">Home</button>
-
-
+               <button class="w-full px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all transform hover:scale-105">Save Changes</button>
+           </form>
+       </div>
+   </div>
 </section>

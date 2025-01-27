@@ -1,0 +1,11 @@
+<div class="flex flex-col items-center justify-start">
+    <button 
+        class="p-2 rounded-lg transition-colors {{ if .UserUpvoted }}text-red-500 hover:text-red-400{{ else }}text-gray-500 hover:text-gray-400{{ end }}"
+        hx-post="/upvote?threadID={{.Id}}&upvote={{if .UserUpvoted}}false{{else}}true{{end}}"
+        hx-target="closest div">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/>
+        </svg>
+    </button>
+    <span class="text-gray-500 text-sm">{{ .UpVotes }}</span>
+</div>

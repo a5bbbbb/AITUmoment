@@ -1,5 +1,8 @@
 package models
 
+import "time"
+
+
 type User struct {
     Id                  int    `db:"id"                  json:"id"                  form:"id"`
     Name                string `db:"username"            json:"name"                form:"username"`
@@ -26,4 +29,16 @@ type Group struct{
     Number              uint8  `db:"number"              json:"number"              form:"number"`
     EduProgName         string `db:"name"                json:"name"                form:"name"`
     GroupName           string `form:"name"`
+}
+
+
+type Thread struct {
+    Id          int       `db:"thread_id"           json:"id"           form:"id"`
+    CreatorID     int       `db:"creator_id"      json:"creator"      form:"creator"`
+    CreatorName     string       `db:"creator_name"      json:"creator_name"      form:"creator_name"`
+    Content      string    `db:"content"      json:"content"      form:"content"`
+    CreateDate   time.Time `db:"create_date" json:"created_data" form:"created_data"`
+    UpVotes      int       `db:"up_votes"     json:"up_votes"    form:"up_votes"`
+    ParentThread *int      `db:"parent_thread_id" json:"parent_thread" form:"parent_thread"`
+    UserUpvoted  bool       `db:"has_upvote" json:"hasUpvote" form:"hasUpvote"`
 }

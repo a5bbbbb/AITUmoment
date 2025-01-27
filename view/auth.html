@@ -5,49 +5,32 @@
 
     <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/htmx-ext-response-targets@2.0.0/response-targets.js"></script>
-    <script>
-        document.body.addEventListener('htmx:beforeRequest', function(evt) {
-            console.log("HTMX request starting:", evt.detail);
-        });
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<section 
-    hx-ext="response-targets">
-    <h1>Login</h1>
-    <br>
 
-    {{ if .fromLoginName }}
-    <span>Now login please, {{ .fromLoginName }}</span>
-    {{ end }}
+<section class="min-h-screen flex items-center justify-center px-4 bg-black" hx-ext="response-targets">
+    <div class="w-full max-w-md bg-gray-900 rounded-2xl shadow-2xl p-8 space-y-6 border border-gray-800">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">AITU Moment</h1>
+            <p class="text-gray-500">Your university social space</p>
+        </div>
 
-    <form 
+        <form class="space-y-4" hx-post="/login" hx-target="section" hx-target-4*="section" hx-swap="outerHTML">
+            <input type="email" name="email" placeholder="Email" class="w-full px-4 py-3 mb-4 border rounded-lg focus:outline-none focus:border-red-500 bg-black text-white border-gray-800">
+            <input type="password" name="passwd" placeholder="Password" class="w-full px-4 py-3 mb-4 border rounded-lg focus:outline-none focus:border-red-500 bg-black text-white border-gray-800">
+            <button class="w-full px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all transform hover:scale-105">Login</button>
+        </form>
 
-        hx-post="/login"
-        hx-target="section"
-        hx-target-4*="section"
-        hx-swap="outerHTML">
-        <input type="email" name="email" placeholder="Email..">
-        <input type="text" name="passwd" placeholder="Password...">
-        <button>Login</button>
-    </form>
-
-    <br>
-
-    <button 
-        hx-target="section" 
-        hx-get="/register"
-        hx-swap= "outerHTML"
-        >Register</button>
-
+        <div class="mt-6 text-center">
+            <button class="text-red-500 hover:text-red-400" hx-target="section" hx-get="/register" hx-swap="outerHTML">Register</button>
+        </div>
 
         {{ if .error }}
-        <div class="error">{{ .error }}</div>
+        <div class="text-red-500 mt-2 text-sm">{{ .error }}</div>
         {{ end }}
-
-
+    </div>
 </section>
-
 
 
 

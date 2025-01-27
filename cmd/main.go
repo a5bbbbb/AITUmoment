@@ -11,11 +11,13 @@ import (
 
 var (
 	authHandler    *handlers.AuthHandler
+	threadHandler  *handlers.ThreadsHandler
 	authMiddleware *middleware.Middleware
 )
 
 func init() {
 	authHandler = handlers.NewAuthHandler()
+	threadHandler = handlers.NewThreadsHandler()
 	authMiddleware = middleware.NewMiddleware()
 }
 
@@ -42,9 +44,13 @@ func registerRoutes(e *gin.Engine) {
 	e.POST("/register", authHandler.Register)
 	e.GET("/groupsList", authHandler.GroupsListPage)
 	e.Use(authMiddleware.AuthMiddleware)
-	e.GET("/", authHandler.MainPage)
+	e.GET("/", threadHandler.FeedPage)
 	e.PUT("/user", authHandler.UpdateUser)
 	e.GET("/user", authHandler.ProfilePage)
 	e.POST("/logout", authHandler.Logout)
+	e.GET("/thread/sub", threadHandler.GetSubThreads)
+	e.GET("/thread/new", threadHandler.CreateThreadPage)
+	e.POST("/thread/new", threadHandler.SaveThread)
+	e.POST("/upvote", threadHandler.SaveUpvote)
 
 }

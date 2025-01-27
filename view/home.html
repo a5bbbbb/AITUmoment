@@ -1,29 +1,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+    <title>AITUMoment</title>
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
     <script src="https://unpkg.com/htmx-ext-response-targets@2.0.0/response-targets.js"></script>
-    <script>
-        document.body.addEventListener('htmx:beforeRequest', function(evt) {
-            console.log("HTMX request starting:", evt.detail);
-        });
-    </script>
-
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-
-<section hx-ext="response-targets">
-
-    <h1>Hello, honest authorized man! {{.name}}</h1>
-
-
-    <button hx-swap="outerHTML" hx-target="section" hx-target-4*="section" hx-post="/logout">Logout</button>
-    <button hx-swap="outerHTML" hx-target="section" hx-target-4*="section" hx-get="/user">Profile</button>
-
-    {{ if .error }}
-    <div class="error">{{ .error }}</div>
-    {{ end }}
-
+<section class="min-h-screen bg-black text-white" hx-ext="response-targets">
+    <nav class="bg-gray-900 border-b border-gray-800 py-4 px-6 mb-8">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">AITU Moment</h1>
+            <div class="flex gap-4">
+                <button class="px-4 py-2 text-gray-300 hover:text-white transition-colors" hx-get="/thread/new" hx-target="section" hx-swap="outerHTML">Start thread</button>
+                <button class="px-4 py-2 text-gray-300 hover:text-white transition-colors" hx-get="/user" hx-target="section" hx-swap="outerHTML">Profile</button>
+                <button class="px-4 py-2 text-gray-300 hover:text-white transition-colors" hx-post="/logout" hx-target="section" hx-swap="outerHTML">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-xl text-gray-400 mb-6">Welcome, {{.name}}</h2>
+        {{ if .threads }}
+        <div id="threads" class="space-y-6">
+            {{ range .threads }}
+            <div class="bg-black p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all mb-4 border border-gray-800">
+                <div class="flex gap-4">
+                    <!-- Upvote Column -->
+                    <div class="flex flex-col items-center justify-start">
+                        <button 
+                            class="p-2 rounded-lg transition-colors {{ if .UserUpvoted }}text-red-500 hover:text-red-400{{ else }}text-gray-500 hover:text-gray-400{{ end }}"
+                            hx-post="/upvote?threadID={{.Id}}&upvote={{if .UserUpvoted}}false{{else}}true{{end}}"
+                            hx-target="closest div">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/>
+                            </svg>
+                        </button>
+                        <span class="text-gray-500 text-sm">{{ .UpVotes }}</span>
+                    </div>
+                    <!-- Content Column -->
+                    <div class="flex-1 cursor-pointer group"
+                        hx-get="/thread/sub"
+                        hx-target="section"
+                        hx-swap="outerHTML"
+                        hx-vals='{"threadID": "{{ .Id }}"}'>
+                        <h3 class="text-xl font-medium mb-2 group-hover:text-red-500 transition-colors">{{ .Content }}</h3>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500">{{ .CreatorName }}</span>
+                            <span class="text-sm text-gray-600">{{ .CreateDate.Format "Jan 02, 2006" }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
 </section>
+
+

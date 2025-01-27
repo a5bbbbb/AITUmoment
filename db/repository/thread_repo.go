@@ -38,16 +38,23 @@ func (r *ThreadRepo) GetParentThreads(userID *int) (*[]models.Thread, error) {
 	return &threads, err
 }
 
-func (r *ThreadRepo) GetSubThreads(parentThread int) (*[]models.Thread, error) {
+func (r *ThreadRepo) GetSubThreads(userID int, parentThread int) (*[]models.Thread, error) {
 	query := `
-        SELECT t.* , u.public_name as creator_name
+        SELECT 
+            t.*,
+            u.public_name as creator_name,
+            CASE 
+                WHEN uv.id IS NOT NULL THEN true
+                ELSE false
+            END as "has_upvote"
         FROM threads t
         JOIN users u ON t.creator_id = u.id
-        WHERE t.parent_thread_id = $1
+        LEFT JOIN upvotes uv ON t.thread_id = uv.threadID AND uv.userID = $1
+        WHERE t.parent_thread_id = $2
     `
 
 	var threads []models.Thread
-	err := r.db.Select(&threads, query, parentThread)
+	err := r.db.Select(&threads, query, userID, parentThread)
 
 	return &threads, err
 }

@@ -30,7 +30,7 @@ func (s *ThreadService) GetThread(threadID int, userID int) (*models.Thread, err
 }
 
 func (s *ThreadService) GetSubThreads(parentThread int, userID int) (*[]models.Thread, *models.Thread, error) {
-	subThreads, err := s.repo.GetSubThreads(parentThread)
+	subThreads, err := s.repo.GetSubThreads(userID, parentThread)
 
 	if err != nil {
 		return nil, nil, err

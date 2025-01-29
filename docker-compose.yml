@@ -1,0 +1,38 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file: .env
+    volumes:
+      - /var/log:/app/logs
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: always
+    networks:
+      - aitu_mom_network
+
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file: .env
+    ports:
+      - "5432:5432"
+    restart: always
+    networks:
+      - aitu_mom_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aitu -d aitu_moment"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  postgres_data:
+
+networks:
+  aitu_mom_network:
+

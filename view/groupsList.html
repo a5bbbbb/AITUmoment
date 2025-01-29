@@ -1,0 +1,7 @@
+ {{ if .group_list }}
+ <select name="group" id="groups" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-red-500 bg-black text-white border-gray-800 appearance-none cursor-pointer">
+     {{ range .group_list }}
+     <option value={{.Id}} class="bg-black">{{.GroupName}}</option>
+     {{ end }}
+ </select>
+ {{ end }}

@@ -1,3 +1,6 @@
 .env
 .DS_Store
+<<<<<<< HEAD
 logrus.log
+logs/
+.null-ls*

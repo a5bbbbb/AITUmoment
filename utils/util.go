@@ -4,6 +4,8 @@ import (
 	"aitu-moment/logger"
 	"errors"
 	"os"
+	"sync"
+	"time"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
@@ -48,4 +50,32 @@ func GetUserFromClaims(c *gin.Context) (*int, error) {
 	userID := int(userIDFloat)
 	return &userID, nil
 
+}
+
+type SafeMapStringTime struct {
+	mu sync.Mutex
+	v  map[string]time.Time
+}
+
+func NewSafeMapStringTime() *SafeMapStringTime {
+	return &SafeMapStringTime{v: make(map[string]time.Time)}
+}
+
+func (c *SafeMapStringTime) Set(key string, deadline time.Time) {
+	c.mu.Lock()
+	c.v[key] = deadline
+	c.mu.Unlock()
+}
+
+func (c *SafeMapStringTime) Unset(key string) {
+	c.mu.Lock()
+	delete(c.v, key)
+	c.mu.Unlock()
+}
+
+func (c *SafeMapStringTime) Value(key string) (time.Time, bool) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	value, ok := c.v[key]
+	return value, ok
 }

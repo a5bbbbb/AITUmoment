@@ -2,10 +2,11 @@ package utils
 
 import (
 	"aitu-moment/logger"
+	"crypto/aes"
+	"crypto/cipher"
+	"encoding/base64"
 	"errors"
 	"os"
-	"sync"
-	"time"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
@@ -16,7 +17,10 @@ func init() {
 	if err := godotenv.Load(); err != nil {
 		logger.GetLogger().Warnf("Warning: .env file not found or error loading it: %v", err)
 	}
+    ENC_SECRET = GetFromEnv("ENC_SCRET", "ComaBomaComaBoma")
 }
+
+var ENC_SECRET string
 
 func GetFromEnv(key, defaultValue string) string {
 	if value := os.Getenv(key); value != "" {
@@ -52,30 +56,46 @@ func GetUserFromClaims(c *gin.Context) (*int, error) {
 
 }
 
-type SafeMapStringTime struct {
-	mu sync.Mutex
-	v  map[string]time.Time
+
+
+
+
+func encode(b []byte) string {
+    return base64.StdEncoding.EncodeToString(b)
 }
 
-func NewSafeMapStringTime() *SafeMapStringTime {
-	return &SafeMapStringTime{v: make(map[string]time.Time)}
+func decode(s string) []byte {
+    data, err := base64.StdEncoding.DecodeString(s)
+    if err != nil {
+        panic(err)
+    }
+    return data
 }
 
-func (c *SafeMapStringTime) Set(key string, deadline time.Time) {
-	c.mu.Lock()
-	c.v[key] = deadline
-	c.mu.Unlock()
+func Encrypt(text string) (string, error) {
+    block, err := aes.NewCipher([]byte(ENC_SECRET))
+    if err != nil {
+        return "", err
+    }
+    plainText := []byte(text)
+    cfb := cipher.NewCFBEncrypter(block, []byte(ENC_SECRET))
+    cipherText := make([]byte, len(plainText))
+    cfb.XORKeyStream(cipherText, plainText)
+    return encode(cipherText), nil
 }
 
-func (c *SafeMapStringTime) Unset(key string) {
-	c.mu.Lock()
-	delete(c.v, key)
-	c.mu.Unlock()
+func Decrypt(text string) (string, error) {
+    block, err := aes.NewCipher([]byte(ENC_SECRET))
+    if err != nil {
+        return "", err
+    }
+    cipherText := decode(text)
+    cfb := cipher.NewCFBDecrypter(block, []byte(ENC_SECRET))
+    plainText := make([]byte, len(cipherText))
+    cfb.XORKeyStream(plainText, cipherText)
+    return string(plainText), nil
 }
 
-func (c *SafeMapStringTime) Value(key string) (time.Time, bool) {
-	c.mu.Lock()
-	defer c.mu.Unlock()
-	value, ok := c.v[key]
-	return value, ok
-}
+
+
+

@@ -13,6 +13,7 @@ type User struct {
     Passwd              string `db:"password"            json:"passwd"              form:"passwd"`
     Bio                 string `db:"bio"                 json:"bio"                 form:"bio"`
     Group               uint8  `db:"group_id"            json:"group"               form:"group"`
+    Verified            bool   `db:"verified"            json:"verified"               form:"verified"`
 }
 
 

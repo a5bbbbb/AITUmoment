@@ -5,7 +5,7 @@ import (
 	"aitu-moment/models"
 	"aitu-moment/services"
 	"aitu-moment/utils"
-	"errors"
+	"fmt"
 	"net/http"
 	"strconv"
 	"time"
@@ -15,20 +15,18 @@ import (
 )
 
 type AuthHandler struct {
-	userService   *services.UserService
-	eduService    *services.EduService
-	groupService  *services.GroupService
-	mailService   *services.MailService
-	pendingEmails *utils.SafeMapStringTime
+	userService  *services.UserService
+	eduService   *services.EduService
+	groupService *services.GroupService
+	mailService  *services.MailService
 }
 
 func NewAuthHandler() *AuthHandler {
 	return &AuthHandler{
-		userService:   services.NewUserService(),
-		eduService:    services.NewEduService(),
-		groupService:  services.NewGroupService(),
-		mailService:   services.NewMailService(),
-		pendingEmails: utils.NewSafeMapStringTime(),
+		userService:  services.NewUserService(),
+		eduService:   services.NewEduService(),
+		groupService: services.NewGroupService(),
+		mailService:  services.NewMailService(),
 	}
 }
 
@@ -157,8 +155,9 @@ func (h *AuthHandler) UpdateUser(c *gin.Context) {
 }
 
 func (h *AuthHandler) Register(c *gin.Context) {
-	logger.GetLogger().SetLevel(5)
+
 	var user *models.User
+
 	if err := c.ShouldBind(&user); err != nil {
 		logger.GetLogger().Errorf("Error during bind in registration %v", err.Error())
 		c.HTML(http.StatusBadRequest, "register.html", gin.H{
@@ -167,70 +166,68 @@ func (h *AuthHandler) Register(c *gin.Context) {
 		return
 	}
 
-	if err := h.VerifyEmail(user.Email, c); err != nil {
-		logger.GetLogger().Errorf("Error verifying email  %v", err.Error())
+	encryptedEmail, err := utils.Encrypt(user.Email)
+
+	if err != nil {
+		c.HTML(http.StatusBadRequest, "register.html", gin.H{
+			"error": "Error during email encryption: " + err.Error(),
+		})
+		return
+	}
+
+	err = h.mailService.SendEmailVerification(user.Email, "http://"+c.Request.Host+"/verify?data="+encryptedEmail)
+
+	if err != nil {
 		c.HTML(http.StatusBadRequest, "register.html", gin.H{
 			"error": "Error during email verification: " + err.Error(),
 		})
 		return
 	}
 
-	user, err := h.userService.CreateUser(user)
+	user, err = h.userService.CreateUser(user)
 
 	if err != nil {
 		logger.GetLogger().Errorf("Error during registration %v", err.Error())
 		c.HTML(http.StatusBadRequest, "register.html", gin.H{
-			"error": "You are a filty little hoe",
+			"error": "Error during registration",
 		})
 		return
 	}
 
 	c.HTML(http.StatusOK, "auth.html", gin.H{
-		"fromLoginName": user.PublicName,
+		"fromLoginName": fmt.Sprintf("%s, please verify your account with the link sent on- %s", user.Name, user.Email),
 	})
 }
 
-func (h *AuthHandler) VerifyEmail(email string, c *gin.Context) error {
-	deadline := time.Now().Add(time.Minute * 5)
-	if _, ok := h.pendingEmails.Value(email); ok {
-		return errors.New("Email verification in process")
-	}
-	h.mailService.SendEmailVerification(email, "http://"+c.Request.Host+"/verify?data="+email)
-	h.pendingEmails.Set(email, deadline)
-	for {
-		if _, ok := h.pendingEmails.Value(email); !ok {
-			return nil
-		}
-		if time.Now().Before(deadline) {
-			time.Sleep(time.Second)
-		} else {
-			h.pendingEmails.Unset(email)
-			return errors.New("Email Verification expired")
-		}
-	}
-}
-
 func (h *AuthHandler) Verify(c *gin.Context) {
-	data := c.Query("data")
-	deadline, ok := h.pendingEmails.Value(data)
+	email := c.Query("data")
 
-	if !ok {
-		logger.GetLogger().Error("Wrong verification link: ", data)
-		c.HTML(http.StatusBadRequest, "register.html", gin.H{
-			"error": "Wrong verification link",
+	if email == "" {
+		c.HTML(http.StatusBadRequest, "auth.html", gin.H{
+			"error": "Wrong verification link!",
 		})
 		return
 	}
 
-	if time.Now().Before(deadline) {
-		h.pendingEmails.Unset(data)
-	} else {
-		logger.GetLogger().Error("Expired verification link: ", c.Request.URL)
-		c.HTML(http.StatusBadRequest, "register.html", gin.H{
-			"error": "Expired verification link",
+	decryptedEmail, err := utils.Decrypt(email)
+
+	if err != nil {
+		c.HTML(http.StatusBadRequest, "auth.html", gin.H{
+			"error": "Error during email decryption",
 		})
 		return
 	}
+
+	err = h.userService.VerifyUser(decryptedEmail)
+
+	if err != nil {
+		c.HTML(http.StatusBadRequest, "auth.html", gin.H{
+			"error": "Error during verification",
+		})
+		return
+	}
+
+	c.Redirect(http.StatusFound, "/")
 }
 
 func (h *AuthHandler) Login(c *gin.Context) {

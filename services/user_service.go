@@ -47,6 +47,12 @@ func(s *UserService) UpdateUser(user *models.User)(*models.User,error){
     return updatedUser,nil
 }
 
+func (s *UserService) VerifyUser(email string) (error){
+    
+    return s.repo.VerifyUser(email)
+
+}
+
 
 func(service *UserService) CreateUser(user *models.User)(*models.User,error){
     var err error

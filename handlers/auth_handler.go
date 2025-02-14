@@ -36,7 +36,7 @@ func (h *AuthHandler) AuthPage(c *gin.Context) {
 
 	if err != nil || userID == nil {
 		logger.GetLogger().Errorf("Error during getting claims in profile page %v", err.Error())
-		c.HTML(http.StatusOK, "auth.html", nil)
+		c.HTML(http.StatusOK, "auth.html", gin.H{})
 		return
 	}
 
@@ -49,7 +49,7 @@ func (h *AuthHandler) RegisterPage(c *gin.Context) {
 	if err != nil {
 		logger.GetLogger().Errorf("Erorr during getting register page %v", err.Error())
 		c.HTML(http.StatusBadRequest, "register.html", gin.H{
-			"error": "You are a filty little hoe",
+			"error": "it is so bad it's indescribable",
 		})
 		return
 	}
@@ -72,7 +72,7 @@ func (h *AuthHandler) GroupsListPage(c *gin.Context) {
 	if err != nil {
 		logger.GetLogger().Errorf("Erorr during getting register page %v", err.Error())
 		c.HTML(http.StatusBadRequest, "register.html", gin.H{
-			"error": "You are a filty little hoe",
+			"error": "it is so bad it's indescribable",
 		})
 		return
 	}
@@ -123,7 +123,7 @@ func (h *AuthHandler) UpdateUser(c *gin.Context) {
 	if err := c.ShouldBind(&user); err != nil {
 		logger.GetLogger().Errorf("Error during bind in update handler %v", err.Error())
 		c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
-			"error": "You are a filty little hoe",
+			"error": "it is so bad it's indescribable",
 		})
 		return
 	}
@@ -132,7 +132,7 @@ func (h *AuthHandler) UpdateUser(c *gin.Context) {
 	if err != nil {
 		logger.GetLogger().Errorf("Error during updating user %v", err.Error())
 		c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
-			"error": "You are a filty little hoe",
+			"error": "it is so bad it's indescribable",
 		})
 		return
 	}
@@ -142,7 +142,7 @@ func (h *AuthHandler) UpdateUser(c *gin.Context) {
 	if err != nil {
 		logger.GetLogger().Errorf("Error during getting user info %v", err.Error())
 		c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
-			"error": "You are a filty little hoe",
+			"error": "it is so bad it's indescribable",
 		})
 		return
 	}

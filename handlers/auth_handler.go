@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
@@ -176,7 +177,7 @@ func (h *AuthHandler) Register(c *gin.Context) {
 		return
 	}
 
-	err = h.mailService.SendEmailVerification(user.Email, "http://"+c.Request.Host+"/verify?data="+encryptedEmail)
+	err = h.mailService.SendEmailVerification(user.Email, "http://"+strings.Replace(c.Request.Host, "81", "80", 1)+"/verify?data="+encryptedEmail)
 
 	if err != nil {
 		c.HTML(http.StatusBadRequest, "register.html", gin.H{

@@ -38,14 +38,15 @@ func main() {
 }
 
 func registerRoutes(e *gin.Engine) {
-	e.GET("/login", redirectHandler.Redirect("8081", "/login"))
-	e.POST("/login", redirectHandler.Redirect("8081", "/login"))
-	e.GET("/register", redirectHandler.Redirect("8081", "/register"))
-	e.POST("/register", redirectHandler.Redirect("8081", "/register"))
-	e.GET("/groupsList", redirectHandler.Redirect("8081", "/groupsList"))
-	e.PUT("/user", redirectHandler.Redirect("8081", "/user"))
-	e.GET("/user", redirectHandler.Redirect("8081", "/user"))
-	e.POST("/logout", redirectHandler.Redirect("8081", "/logout"))
+	e.GET("/login", redirectHandler.Redirect("localhost", "8081", "/login"))
+	e.POST("/login", redirectHandler.Redirect("localhost", "8081", "/login"))
+	e.GET("/register", redirectHandler.Redirect("localhost", "8081", "/register"))
+	e.GET("/verify", redirectHandler.Redirect("localhost", "8081", "/verify"))
+	e.POST("/register", redirectHandler.Redirect("localhost", "8081", "/register"))
+	e.GET("/groupsList", redirectHandler.Redirect("localhost", "8081", "/groupsList"))
+	e.PUT("/user", redirectHandler.Redirect("localhost", "8081", "/user"))
+	e.GET("/user", redirectHandler.Redirect("localhost", "8081", "/user"))
+	e.POST("/logout", redirectHandler.Redirect("localhost", "8081", "/logout"))
 	e.Use(authMiddleware.AuthMiddleware)
 	e.GET("/", threadHandler.FeedPage)
 	e.GET("/thread/sub", threadHandler.GetSubThreads)

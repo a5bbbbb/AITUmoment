@@ -4,6 +4,7 @@ import (
 	"aitu-moment/db"
 	"aitu-moment/handlers"
 	"aitu-moment/logger"
+	"aitu-moment/middleware"
 	"fmt"
 
 	"github.com/gin-gonic/gin"
@@ -11,11 +12,13 @@ import (
 
 var (
 	authHandler *handlers.AuthHandler
+	middlewares *middleware.Middleware
 )
 
 func init() {
 
 	authHandler = handlers.NewAuthHandler()
+	middlewares = middleware.NewMiddleware()
 }
 
 func main() {
@@ -43,8 +46,10 @@ func registerRoutes(e *gin.Engine) {
 	e.POST("/login", authHandler.Login)
 	e.GET("/register", authHandler.RegisterPage)
 	e.POST("/register", authHandler.Register)
+	e.GET("/verify", authHandler.Verify)
 	e.GET("/groupsList", authHandler.GroupsListPage)
+	e.POST("/logout", authHandler.Logout)
+	e.Use(middlewares.AuthMiddleware)
 	e.PUT("/user", authHandler.UpdateUser)
 	e.GET("/user", authHandler.ProfilePage)
-	e.POST("/logout", authHandler.Logout)
 }

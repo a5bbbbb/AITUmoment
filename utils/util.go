@@ -14,7 +14,7 @@ import (
 )
 
 func init() {
-	if err := godotenv.Load(); err != nil {
+	if err := godotenv.Load(".env", "../.env", "../../.env"); err != nil {
 		logger.GetLogger().Warnf("Warning: .env file not found or error loading it: %v", err)
 	}
 	ENC_SECRET = GetFromEnv("ENC_SCRET", "ComaBomaComaBoma")

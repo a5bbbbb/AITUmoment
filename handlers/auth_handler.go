@@ -5,6 +5,7 @@ import (
 	"aitu-moment/models"
 	"aitu-moment/services"
 	"aitu-moment/utils"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"strconv"
@@ -49,7 +50,7 @@ func (h *AuthHandler) RegisterPage(c *gin.Context) {
 	if err != nil {
 		logger.GetLogger().Errorf("Erorr during getting register page %v", err.Error())
 		c.HTML(http.StatusBadRequest, "register.html", gin.H{
-			"error": "it is so bad it's indescribable",
+			"error": "Something went wrong",
 		})
 		return
 	}
@@ -72,7 +73,7 @@ func (h *AuthHandler) GroupsListPage(c *gin.Context) {
 	if err != nil {
 		logger.GetLogger().Errorf("Erorr during getting register page %v", err.Error())
 		c.HTML(http.StatusBadRequest, "register.html", gin.H{
-			"error": "it is so bad it's indescribable",
+			"error": "Something went wrong",
 		})
 		return
 	}
@@ -123,7 +124,7 @@ func (h *AuthHandler) UpdateUser(c *gin.Context) {
 	if err := c.ShouldBind(&user); err != nil {
 		logger.GetLogger().Errorf("Error during bind in update handler %v", err.Error())
 		c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
-			"error": "it is so bad it's indescribable",
+			"error": "Something went wrong",
 		})
 		return
 	}
@@ -132,7 +133,7 @@ func (h *AuthHandler) UpdateUser(c *gin.Context) {
 	if err != nil {
 		logger.GetLogger().Errorf("Error during updating user %v", err.Error())
 		c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
-			"error": "it is so bad it's indescribable",
+			"error": "Something went wrong",
 		})
 		return
 	}
@@ -142,7 +143,7 @@ func (h *AuthHandler) UpdateUser(c *gin.Context) {
 	if err != nil {
 		logger.GetLogger().Errorf("Error during getting user info %v", err.Error())
 		c.HTML(http.StatusBadRequest, "userProfile.html", gin.H{
-			"error": "it is so bad it's indescribable",
+			"error": "Something went wrong",
 		})
 		return
 	}
@@ -235,12 +236,16 @@ func (h *AuthHandler) Login(c *gin.Context) {
 	email, _ := c.GetPostForm("email")
 	passwd, _ := c.GetPostForm("passwd")
 
+	fmt.Println("Login " + email + " , " + passwd)
+
 	user, err := h.userService.Authorize(email, passwd)
 
 	if err != nil || user == nil {
 		c.HTML(http.StatusUnauthorized, "auth.html", gin.H{
 			"error": "Invalid credentials!",
 		})
+		t, _ := json.Marshal(user)
+		fmt.Println(string(t), " ", err.Error())
 		return
 	}
 

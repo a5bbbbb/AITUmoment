@@ -10,13 +10,13 @@ import (
 )
 
 var (
-	authHandler    *handlers.AuthHandler
-	threadHandler  *handlers.ThreadsHandler
-	authMiddleware *middleware.Middleware
+	redirectHandler *handlers.RedirectHandler
+	threadHandler   *handlers.ThreadsHandler
+	authMiddleware  *middleware.Middleware
 )
 
 func init() {
-	authHandler = handlers.NewAuthHandler()
+	redirectHandler = handlers.NewRedirectHandler()
 	threadHandler = handlers.NewThreadsHandler()
 	authMiddleware = middleware.NewMiddleware()
 }
@@ -38,17 +38,16 @@ func main() {
 }
 
 func registerRoutes(e *gin.Engine) {
-	e.GET("/login", authHandler.AuthPage)
-	e.POST("/login", authHandler.Login)
-	e.GET("/register", authHandler.RegisterPage)
-	e.POST("/register", authHandler.Register)
-	e.GET("/groupsList", authHandler.GroupsListPage)
-	e.GET("/verify", authHandler.Verify)
+	e.GET("/login", redirectHandler.Redirect("8081", "/login"))
+	e.POST("/login", redirectHandler.Redirect("8081", "/login"))
+	e.GET("/register", redirectHandler.Redirect("8081", "/register"))
+	e.POST("/register", redirectHandler.Redirect("8081", "/register"))
+	e.GET("/groupsList", redirectHandler.Redirect("8081", "/groupsList"))
+	e.PUT("/user", redirectHandler.Redirect("8081", "/user"))
+	e.GET("/user", redirectHandler.Redirect("8081", "/user"))
+	e.POST("/logout", redirectHandler.Redirect("8081", "/logout"))
 	e.Use(authMiddleware.AuthMiddleware)
 	e.GET("/", threadHandler.FeedPage)
-	e.PUT("/user", authHandler.UpdateUser)
-	e.GET("/user", authHandler.ProfilePage)
-	e.POST("/logout", authHandler.Logout)
 	e.GET("/thread/sub", threadHandler.GetSubThreads)
 	e.GET("/thread/new", threadHandler.CreateThreadPage)
 	e.POST("/thread/new", threadHandler.SaveThread)

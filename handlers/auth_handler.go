@@ -5,6 +5,7 @@ import (
 	"aitu-moment/models"
 	"aitu-moment/services"
 	"aitu-moment/utils"
+	"fmt"
 	"net/http"
 	"strconv"
 	"time"
@@ -17,6 +18,7 @@ type AuthHandler struct {
 	userService  *services.UserService
 	eduService   *services.EduService
 	groupService *services.GroupService
+	mailService  *services.MailService
 }
 
 func NewAuthHandler() *AuthHandler {
@@ -24,6 +26,7 @@ func NewAuthHandler() *AuthHandler {
 		userService:  services.NewUserService(),
 		eduService:   services.NewEduService(),
 		groupService: services.NewGroupService(),
+		mailService:  services.NewMailService(),
 	}
 }
 
@@ -154,27 +157,77 @@ func (h *AuthHandler) UpdateUser(c *gin.Context) {
 func (h *AuthHandler) Register(c *gin.Context) {
 
 	var user *models.User
+
 	if err := c.ShouldBind(&user); err != nil {
 		logger.GetLogger().Errorf("Error during bind in registration %v", err.Error())
 		c.HTML(http.StatusBadRequest, "register.html", gin.H{
-			"error": "You are a filty little hoe",
+			"error": "Wrong data format",
 		})
 		return
 	}
 
-	user, err := h.userService.CreateUser(user)
+	encryptedEmail, err := utils.Encrypt(user.Email)
+
+	if err != nil {
+		c.HTML(http.StatusBadRequest, "register.html", gin.H{
+			"error": "Error during email encryption: " + err.Error(),
+		})
+		return
+	}
+
+	err = h.mailService.SendEmailVerification(user.Email, "http://"+c.Request.Host+"/verify?data="+encryptedEmail)
+
+	if err != nil {
+		c.HTML(http.StatusBadRequest, "register.html", gin.H{
+			"error": "Error during email verification: " + err.Error(),
+		})
+		return
+	}
+
+	user, err = h.userService.CreateUser(user)
 
 	if err != nil {
 		logger.GetLogger().Errorf("Error during registration %v", err.Error())
 		c.HTML(http.StatusBadRequest, "register.html", gin.H{
-			"error": "You are a filty little hoe",
+			"error": "Error during registration",
 		})
 		return
 	}
 
 	c.HTML(http.StatusOK, "auth.html", gin.H{
-		"fromLoginName": user.PublicName,
+		"fromLoginName": fmt.Sprintf("%s, please verify your account with the link sent on- %s", user.Name, user.Email),
 	})
+}
+
+func (h *AuthHandler) Verify(c *gin.Context) {
+	email := c.Query("data")
+
+	if email == "" {
+		c.HTML(http.StatusBadRequest, "auth.html", gin.H{
+			"error": "Wrong verification link!",
+		})
+		return
+	}
+
+	decryptedEmail, err := utils.Decrypt(email)
+
+	if err != nil {
+		c.HTML(http.StatusBadRequest, "auth.html", gin.H{
+			"error": "Error during email decryption",
+		})
+		return
+	}
+
+	err = h.userService.VerifyUser(decryptedEmail)
+
+	if err != nil {
+		c.HTML(http.StatusBadRequest, "auth.html", gin.H{
+			"error": "Error during verification",
+		})
+		return
+	}
+
+	c.Redirect(http.StatusFound, "/")
 }
 
 func (h *AuthHandler) Login(c *gin.Context) {

@@ -13,7 +13,14 @@
     <div class="w-full max-w-md bg-gray-900 rounded-2xl shadow-2xl p-8 space-y-6 border border-gray-800">
         <div class="text-center mb-8">
             <h1 class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">AITU Moment</h1>
-            <p class="text-gray-500">Your university social space</p>
+
+            {{ if .fromLoginName }}
+                <p class="text-gray-500">{{ .fromLoginName }}</p>
+            {{ else }}
+                <p class="text-gray-500">Your university social space</p>
+            {{ end }}
+
+
         </div>
 
         <form class="space-y-4" hx-post="/login" hx-target="section" hx-target-4*="section" hx-swap="outerHTML">

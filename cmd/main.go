@@ -43,6 +43,7 @@ func registerRoutes(e *gin.Engine) {
 	e.GET("/register", authHandler.RegisterPage)
 	e.POST("/register", authHandler.Register)
 	e.GET("/groupsList", authHandler.GroupsListPage)
+	e.GET("/verify", authHandler.Verify)
 	e.Use(authMiddleware.AuthMiddleware)
 	e.GET("/", threadHandler.FeedPage)
 	e.PUT("/user", authHandler.UpdateUser)

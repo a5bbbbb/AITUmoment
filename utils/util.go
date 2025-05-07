@@ -17,7 +17,7 @@ func init() {
 	if err := godotenv.Load(); err != nil {
 		logger.GetLogger().Warnf("Warning: .env file not found or error loading it: %v", err)
 	}
-	ENC_SECRET = GetFromEnv("ENC_SCRET", "ComaBomaComaBoma")
+    ENC_SECRET = GetFromEnv("ENC_SCRET", "ComaBomaComaBoma")
 }
 
 var ENC_SECRET string
@@ -56,38 +56,46 @@ func GetUserFromClaims(c *gin.Context) (*int, error) {
 
 }
 
+
+
+
+
 func encode(b []byte) string {
-	return base64.StdEncoding.EncodeToString(b)
+    return base64.StdEncoding.EncodeToString(b)
 }
 
 func decode(s string) []byte {
-	data, err := base64.StdEncoding.DecodeString(s)
-	if err != nil {
-		panic(err)
-	}
-	return data
+    data, err := base64.StdEncoding.DecodeString(s)
+    if err != nil {
+        panic(err)
+    }
+    return data
 }
 
 func Encrypt(text string) (string, error) {
-	block, err := aes.NewCipher([]byte(ENC_SECRET))
-	if err != nil {
-		return "", err
-	}
-	plainText := []byte(text)
-	cfb := cipher.NewCFBEncrypter(block, []byte(ENC_SECRET))
-	cipherText := make([]byte, len(plainText))
-	cfb.XORKeyStream(cipherText, plainText)
-	return encode(cipherText), nil
+    block, err := aes.NewCipher([]byte(ENC_SECRET))
+    if err != nil {
+        return "", err
+    }
+    plainText := []byte(text)
+    cfb := cipher.NewCFBEncrypter(block, []byte(ENC_SECRET))
+    cipherText := make([]byte, len(plainText))
+    cfb.XORKeyStream(cipherText, plainText)
+    return encode(cipherText), nil
 }
 
 func Decrypt(text string) (string, error) {
-	block, err := aes.NewCipher([]byte(ENC_SECRET))
-	if err != nil {
-		return "", err
-	}
-	cipherText := decode(text)
-	cfb := cipher.NewCFBDecrypter(block, []byte(ENC_SECRET))
-	plainText := make([]byte, len(cipherText))
-	cfb.XORKeyStream(plainText, cipherText)
-	return string(plainText), nil
+    block, err := aes.NewCipher([]byte(ENC_SECRET))
+    if err != nil {
+        return "", err
+    }
+    cipherText := decode(text)
+    cfb := cipher.NewCFBDecrypter(block, []byte(ENC_SECRET))
+    plainText := make([]byte, len(cipherText))
+    cfb.XORKeyStream(plainText, cipherText)
+    return string(plainText), nil
 }
+
+
+
+

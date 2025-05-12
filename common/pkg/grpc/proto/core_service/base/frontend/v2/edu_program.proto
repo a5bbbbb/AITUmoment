@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package core.base.frontend.v2;
+
+option go_package = "github.com/a5bbbbb/AITUmoment/common/pkg/grpc/proto/core_service/gen/base/frontend/v2;base";
+
+message EduProgram {
+    int64 id = 1;
+    string name = 2;
+}

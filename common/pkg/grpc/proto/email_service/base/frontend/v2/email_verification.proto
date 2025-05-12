@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package email.base.frontend.v2;
+
+option go_package = "github.com/a5bbbbb/AITUmoment/common/pkg/grpc/proto/email_service/gen/base/frontend/v2;base";
+
+message EmailVerification {
+    string email = 1;
+    string public_name = 2;
+    string verification_link = 3;
+}

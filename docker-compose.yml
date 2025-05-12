@@ -1,38 +1,72 @@
 services:
-  app:
-    build: .
+  api_gateway: 
+    build: 
+      dockerfile: ./api_gateway/dockerfile
+      context: .
+    develop:
+      watch: 
+        - action: sync+restart
+          path: ./api_gateway/view
+          target: /app/view
     ports:
       - "8080:8080"
-    env_file: .env
+    env_file: ./api_gateway/.env
+    environment:
+      - GRPC_CORE_SERVICE_URL=core_service:5001
+
+  core_service:
+    build: 
+      dockerfile: ./core_service/dockerfile
+      context: .
+    env_file: ./core_service/.env
     volumes:
       - /var/log:/app/logs
-    depends_on:
-      db:
-        condition: service_healthy
-    restart: always
-    networks:
-      - aitu_mom_network
-
-  db:
-    image: postgres:15-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    env_file: .env
+    environment:
+      - GRPC_PORT=5001
     ports:
-      - "5432:5432"
-    restart: always
-    networks:
-      - aitu_mom_network
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U aitu -d aitu_moment"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
+      - "5001:5001"
+    depends_on:
+      nats:
+        condition: service_started
+      # db:
+      #   condition: service_healthy
+
+  email_service:
+    build:
+      dockerfile: ./email_service/dockerfile
+      context: .
+    env_file: ./email_service/.env
+    environment:
+      - GRPC_PORT=5002
+      - NATS_HOSTS=nats:4222
+    depends_on:
+      nats:
+        condition: service_started
+
+  nats:
+    image: nats:latest
+    configs:
+      - nats-server.conf
+
+  # db:
+  #   image: postgres:latest
+  #   environment:
+  #     - POSTGRES_PASSWORD="J*Ha&dh&;a(qp)(}la"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   restart: always
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+  #     interval: 5s
+  #     timeout: 5s
+  #     retries: 2
+  #     start_period: 10s
 
 volumes:
   postgres_data:
 
-networks:
-  aitu_mom_network:
-
+configs:
+  nats-server.conf:
+    file: ./nats-server.conf

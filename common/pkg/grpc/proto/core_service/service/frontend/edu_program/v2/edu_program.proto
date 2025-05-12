@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package core.service.frontend.edu_program.v2;
+
+import "base/frontend/v2/edu_program.proto";
+
+option go_package = "github.com/a5bbbbb/AITUmoment/common/pkg/grpc/proto/core_service/service/frontend/edu_program/v2;edu_program";
+
+service EduProgramService {
+
+    rpc GetEduPrograms(GetEduProgramsRequest) returns (GetEduProgramsResponse);
+
+}
+
+message GetEduProgramsRequest {
+
+}
+
+message GetEduProgramsResponse {
+    repeated base.frontend.v2.EduProgram edu_programs = 1;
+}

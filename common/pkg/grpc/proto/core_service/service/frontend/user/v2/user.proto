@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package core.service.frontend.user.v2;
+
+import "base/frontend/v2/user.proto";
+import "base/frontend/v2/edu_program.proto";
+import "base/frontend/v2/group.proto";
+
+option go_package = "github.com/a5bbbbb/AITUmoment/common/pkg/grpc/proto/core_service/service/frontend/user/v2;user";
+
+service UserService {
+    // if credentials are correct, then return user
+    rpc Authorize(AuthorizeRequest) returns (AuthorizeResponse);
+
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+
+    rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+
+    rpc GetFullUserInfo(GetFullUserInfoRequest) returns (GetFullUserInfoResponse);
+
+    rpc VerifyEmail(VerifyEmailRequest) returns (VerifyEmailResponse);
+}
+
+message AuthorizeRequest {
+    string email = 1;
+    string passwd = 2;
+}
+
+message AuthorizeResponse {
+    base.frontend.v2.User user = 1;
+}
+
+message CreateUserRequest {
+    base.frontend.v2.User user = 1;
+}
+
+message CreateUserResponse {
+    base.frontend.v2.User user = 1;
+}
+
+message UpdateUserRequest {
+    base.frontend.v2.User user = 1;
+}
+
+message UpdateUserResponse {
+    base.frontend.v2.User user = 1;
+}
+
+message GetFullUserInfoRequest {
+    int64 user_id = 1;
+}
+
+message GetFullUserInfoResponse {
+    base.frontend.v2.User user = 1;
+    repeated base.frontend.v2.EduProgram edu_programs = 2;
+    base.frontend.v2.Group group = 3;
+}
+
+message VerifyEmailRequest {
+    string token = 1;
+}
+
+message VerifyEmailResponse {
+    base.frontend.v2.User user = 1;
+}

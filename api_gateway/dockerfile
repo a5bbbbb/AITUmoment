@@ -1,0 +1,41 @@
+# Build stage
+FROM golang:1.24.3 AS builder
+
+WORKDIR /app/api_gateway/
+# Base directory is AITUmoment
+
+# Copy dependency files first for better caching
+COPY /api_gateway/go.mod /api_gateway/go.sum ./
+
+COPY /common ../common
+
+RUN go mod download
+
+# Copy the rest of the application
+COPY /api_gateway/. .
+
+# Build the application
+RUN CGO_ENABLED=0 GOOS=linux go build -o main ./cmd/main.go
+
+# Final stage
+FROM alpine:latest
+
+# Add ca-certificates for HTTPS and timezone data
+RUN apk --no-cache add ca-certificates tzdata
+
+WORKDIR /app
+
+# Copy the binary from builder
+COPY --from=builder /app/api_gateway/main .
+
+# Copy necessary application files
+COPY  /api_gateway/view view/
+
+# Create directory for logs
+RUN mkdir -p /app/logs
+
+ENV HTTP_PORT=8080
+
+EXPOSE 8080
+
+ENTRYPOINT ["./main"]

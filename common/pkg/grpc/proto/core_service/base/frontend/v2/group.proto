@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package core.base.frontend.v2;
+
+option go_package = "github.com/a5bbbbb/AITUmoment/common/pkg/grpc/proto/core_service/gen/base/frontend/v2;base";
+
+message Group {
+    int64 id = 1;
+    uint32 educational_program = 2;
+    int32 year = 3;
+    uint32 number = 4;
+    string edu_prog_name = 5;
+    string group_name = 6;
+}

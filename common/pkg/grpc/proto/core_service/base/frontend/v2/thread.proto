@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package core.base.frontend.v2;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/a5bbbbb/AITUmoment/common/pkg/grpc/proto/core_service/gen/base/frontend/v2;base";
+
+message Thread {
+    int64 id = 1;
+    int64 creator_id = 2;
+    string creator_name = 3;
+    string content = 4;
+    google.protobuf.Timestamp create_date = 5;
+    int64 up_votes = 6;
+    int64 parent_thread = 7;
+    bool user_upvoted = 8;
+}

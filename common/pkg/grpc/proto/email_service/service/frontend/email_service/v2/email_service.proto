@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package email.service.frontend.email_service.v2;
+
+import "base/frontend/v2/email_verification.proto";
+
+option go_package = "github.com/a5bbbbb/AITUmoment/common/pkg/grpc/proto/email_service/service/frontend/email_service/v2;email_service";
+
+service EmailService {
+
+    rpc SendEmailVerification(SendEmailVerificationRequest) returns (SendEmailVerificationResponse);
+
+}
+
+message SendEmailVerificationRequest {
+    base.frontend.v2.EmailVerification verification = 1;
+}
+
+message SendEmailVerificationResponse {
+}

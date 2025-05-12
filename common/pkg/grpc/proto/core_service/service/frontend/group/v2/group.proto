@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package core.service.frontend.group.v2;
+
+import "base/frontend/v2/group.proto";
+
+option go_package = "github.com/a5bbbbb/AITUmoment/common/pkg/grpc/proto/core_service/service/frontend/group/v2;group";
+
+service GroupService {
+
+    rpc GetGroups(GetGroupsRequest) returns (GetGroupsResponse);
+
+    rpc GetGroup(GetGroupRequest) returns (GetGroupResponse);
+}
+
+message GetGroupsRequest {
+    uint32 edu_program_id = 1;
+}
+
+message GetGroupsResponse {
+    repeated base.frontend.v2.Group groups = 1;
+}
+
+message GetGroupRequest {
+    int64 group_id = 1;
+}
+
+message GetGroupResponse {
+    base.frontend.v2.Group group = 1;
+}

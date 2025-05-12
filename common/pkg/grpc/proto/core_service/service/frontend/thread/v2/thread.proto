@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package core.service.frontend.thread.v2;
+
+import "base/frontend/v2/thread.proto";
+
+option go_package = "github.com/a5bbbbb/AITUmoment/common/pkg/grpc/proto/core_service/service/frontend/thread/v2;thread";
+
+service ThreadService {
+    
+    rpc GetParentThreads(GetParentThreadsRequest) returns (GetParentThreadsResponse);
+
+    rpc GetSubThreads(GetSubThreadsRequest) returns (GetSubThreadsResponse);
+
+    rpc GetThread(GetThreadRequest) returns (GetThreadResponse);
+
+    rpc SaveThread(SaveThreadRequest) returns (SaveThreadResponse);
+
+    rpc SaveUpvote(SaveUpvoteRequest) returns (SaveUpvoteResponse);
+}
+
+message GetParentThreadsRequest {
+    int64 user_id = 1;
+}
+
+message GetParentThreadsResponse {
+    repeated base.frontend.v2.Thread threads = 1;
+}
+
+message GetSubThreadsRequest {
+    int64 parent_thread_id = 1;
+    int64 user_id = 2;
+}
+
+message GetSubThreadsResponse {
+    repeated base.frontend.v2.Thread sub_threads = 1;
+    base.frontend.v2.Thread parent_thread = 2;
+}
+
+message GetThreadRequest {
+    int64 thread_id = 1;
+    int64 user_id = 2;
+}
+
+message GetThreadResponse {
+    base.frontend.v2.Thread thread = 1;
+}
+
+message SaveThreadRequest {
+    string content = 1;
+    int64 creator_id = 2;
+    int64 parent_thread_id = 3;
+}
+
+message SaveThreadResponse {
+    int64 thread_id = 1;
+}
+
+message SaveUpvoteRequest {
+    int64 thread_id = 1;
+    int64 user_id = 2;
+    bool upvote = 3;
+}
+
+message SaveUpvoteResponse {
+}

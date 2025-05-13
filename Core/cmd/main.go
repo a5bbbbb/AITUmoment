@@ -5,6 +5,7 @@ import (
 	"aitu-moment/handlers"
 	"aitu-moment/logger"
 	"aitu-moment/middleware"
+	"aitu-moment/publisher"
 
 	"github.com/gin-gonic/gin"
 )
@@ -32,9 +33,14 @@ func main() {
 
 	registerRoutes(engine)
 
+	publisher.InitProvider()
+	defer publisher.CloseConn()
+	defer publisher.GetProvider().EmailPublisher.ClosePublisher()
+
 	logger.GetLogger().Info("Successfully started the server")
 
 	engine.Run(":8080")
+
 }
 
 func registerRoutes(e *gin.Engine) {

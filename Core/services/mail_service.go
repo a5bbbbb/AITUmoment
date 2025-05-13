@@ -2,6 +2,7 @@ package services
 
 import (
 	"aitu-moment/logger"
+	"aitu-moment/publisher"
 	"errors"
 	"os"
 
@@ -54,7 +55,9 @@ func (m *MailService) SendEmailVerification(to, link string) error {
 	If you did not register on our platform, then please ignore this message.</p>
 	<a href="` + link + `">Verify email</a>`
 
-	err := m.sendMail(to, subject, body)
+	err := publisher.GetProvider().EmailPublisher.PublishEmailSendMessage(to, subject, body)
+
+	// err := m.sendMail(to, subject, body)
 
 	if err != nil {
 		logger.GetLogger().Errorf("Error sending email verification letter to %s with link %s: %s", to, link, err.Error())

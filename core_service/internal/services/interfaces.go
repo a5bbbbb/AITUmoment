@@ -40,3 +40,10 @@ type EmailVerificationManager interface {
 	Generate(models.User) (*models.EmailVerification, error)
 	GetEmail(token string) (string, error)
 }
+
+type RedisCache interface {
+	Get(ctx context.Context, userId int) (*models.User, error)
+	Set(ctx context.Context, user *models.User) error
+	SetMany(ctx context.Context, users []models.User) error
+	Delete(ctx context.Context, userId int) error
+}

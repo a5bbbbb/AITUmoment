@@ -23,11 +23,11 @@ services:
       - /var/log:/app/logs
     environment:
       - GRPC_PORT=5001
-    ports:
-      - "5001:5001"
     depends_on:
       nats:
         condition: service_started
+      redis:
+        condition: service_healthy
       # db:
       #   condition: service_healthy
 
@@ -47,25 +47,57 @@ services:
     image: nats:latest
     configs:
       - nats-server.conf
+  
+  redis:
+    image: redis:latest
+    env_file: ./redis.env
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - REDIS_USER=${REDIS_USER}
+      - REDIS_USER_PASSWORD=${REDIS_USER_PASSWORD}
+    # ports:
+    #   - "6380:6379"
+    volumes:
+      - redis_data:/data
+    # command: >
+    #   sh -c '
+    #     mkdir -p /usr/local/etc/redis &&
+    #     echo "bind 0.0.0.0" > /usr/local/etc/redis/redis.conf &&
+    #     echo "requirepass $REDIS_PASSWORD" >> /usr/local/etc/redis/redis.conf &&
+    #     echo "appendonly yes" >> /usr/local/etc/redis/redis.conf &&
+    #     echo "appendfsync everysec" >> /usr/local/etc/redis/redis.conf &&
+    #     echo "user default on nopass ~* +@all" > /usr/local/etc/redis/users.acl &&
+    #     echo "user $REDIS_USER on >$REDIS_USER_PASSWORD ~* +@all" >> /usr/local/etc/redis/users.acl &&
+    #     redis-server /usr/local/etc/redis/redis.conf --aclfile /usr/local/etc/redis/users.acl
+    #   '
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "$REDIS_PASSWORD", "ping"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
 
   # db:
-  #   image: postgres:latest
-  #   environment:
-  #     - POSTGRES_PASSWORD="J*Ha&dh&;a(qp)(}la"
+  #   image: postgres:15-alpine
+  #   env_file: .env
   #   volumes:
   #     - postgres_data:/var/lib/postgresql/data
   #   ports:
   #     - "5432:5432"
   #   restart: always
   #   healthcheck:
-  #     test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+  #     test: ["CMD-SHELL", "pg_isready -U aitu -d aitu_moment"]
   #     interval: 5s
   #     timeout: 5s
   #     retries: 2
   #     start_period: 10s
+      
 
 volumes:
   postgres_data:
+  redis_data:
 
 configs:
   nats-server.conf:

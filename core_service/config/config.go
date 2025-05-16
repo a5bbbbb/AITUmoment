@@ -11,6 +11,8 @@ type (
 		Server  Server
 		LinkGen VerificationLinkGenerator
 		Nats    Nats
+		Redis   Redis
+		Cache   Cache
 	}
 
 	Server struct {
@@ -40,6 +42,22 @@ type (
 	// NatsSubjects for main application
 	NatsSubjects struct {
 		EmailVerificationCommandSubject string `env:"NATS_EMAIL_VERIFICATION_EVENT_SUBJECT,notEmpty"`
+	}
+
+	// Redis configuration for main application
+	Redis struct {
+		Host         string        `env:"REDIS_HOSTS,notEmpty" envSeparator:","`
+		Password     string        `env:"REDIS_PASSWORD"`
+		TLSEnable    bool          `env:"REDIS_TLS_ENABLE" envDefault:"true"`
+		DialTimeout  time.Duration `env:"REDIS_DIAL_TIMEOUT" envDefault:"60s"`
+		WriteTimeout time.Duration `env:"REDIS_WRITE_TIMEOUT" envDefault:"60s"`
+		ReadTimeout  time.Duration `env:"REDIS_READ_TIMEOUT" envDefault:"30s"`
+	}
+
+	Cache struct {
+		UserTTL time.Duration `env:"REDIS_CACHE_CLIENT_TTL" envDefault:"10s"`
+
+		CMSVariableRefreshTime time.Duration `env:"CLIENT_REFRESH_TIME" envDefault:"1m"`
 	}
 )
 

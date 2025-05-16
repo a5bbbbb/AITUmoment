@@ -189,6 +189,7 @@ func (h *AuthHandler) Register(c *gin.Context) {
 	}
 
 	c.HTML(http.StatusOK, "auth.html", gin.H{
+		"message":       "Check your email for email verification letter.",
 		"fromLoginName": user.PublicName,
 	})
 }

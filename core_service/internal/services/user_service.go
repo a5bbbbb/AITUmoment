@@ -13,6 +13,7 @@ type UserService struct {
 	eduProgramRepo           EduProgramRepository
 	emailVerifProducer       EmailVerificationProducer
 	emailVerificationManager EmailVerificationManager
+	redisCache               RedisCache
 }
 
 func NewUserService(
@@ -21,6 +22,7 @@ func NewUserService(
 	eduProgramRepo EduProgramRepository,
 	emailVerifProducer EmailVerificationProducer,
 	verificationLinkGenerator EmailVerificationManager,
+	redisCache RedisCache,
 ) *UserService {
 	logger.GetLogger().Trace("Creating user service")
 	return &UserService{
@@ -29,6 +31,7 @@ func NewUserService(
 		eduProgramRepo:           eduProgramRepo,
 		emailVerifProducer:       emailVerifProducer,
 		emailVerificationManager: verificationLinkGenerator,
+		redisCache:               redisCache,
 	}
 }
 
@@ -62,6 +65,11 @@ func (us *UserService) UpdateUser(user *models.User) (*models.User, error) {
 		return nil, err
 	}
 
+	err = us.redisCache.Set(context.TODO(), updatedUser)
+	if err != nil {
+		logger.GetLogger().Error("UserService:UpdateUser could not set user cache")
+	}
+
 	return updatedUser, nil
 }
 
@@ -92,6 +100,11 @@ func (us *UserService) CreateUser(user *models.User) (*models.User, error) {
 		return nil, err
 	}
 
+	err = us.redisCache.Set(context.TODO(), createdUser)
+	if err != nil {
+		logger.GetLogger().Error("UserService:UpdateUser could not set user cache")
+	}
+
 	return createdUser, nil
 }
 
@@ -114,11 +127,25 @@ func (us *UserService) VerifyEmail(token string) (*models.User, error) {
 		return nil, err
 	}
 
+	err = us.redisCache.Set(context.TODO(), updatedUser)
+	if err != nil {
+		logger.GetLogger().Error("UserService:VerifyEmail could not set user cache")
+	}
+
 	return updatedUser, nil
 }
 
 func (us *UserService) GetFullUserInfo(userID int) (*models.User, *[]models.EduProgram, *models.Group, error) {
-	user, err := us.userRepo.GetUser(int64(userID))
+	user, err := us.redisCache.Get(context.TODO(), userID)
+
+	if err != nil {
+		logger.GetLogger().Info("UserService:GetFullUser cache miss (((")
+
+		user, err = us.userRepo.GetUser(int64(userID))
+
+	} else {
+		logger.GetLogger().Info("UserService:GetFullUser cache hit  !!!")
+	}
 
 	if err != nil {
 		logger.GetLogger().Error("cannot get user with id ", userID, " : ", err.Error())
@@ -137,6 +164,11 @@ func (us *UserService) GetFullUserInfo(userID int) (*models.User, *[]models.EduP
 	if err != nil {
 		logger.GetLogger().Error("cannot get group with id ", user.Group, " : ", err.Error())
 		return nil, nil, nil, err
+	}
+
+	err = us.redisCache.Set(context.TODO(), user)
+	if err != nil {
+		logger.GetLogger().Error("UserService:UpdateUser could not set user cache")
 	}
 
 	return user, programs, group, nil

@@ -13,8 +13,10 @@ import (
 	"github.com/a5bbbbb/AITUmoment/core_service/internal/adapter/grpc/server"
 	"github.com/a5bbbbb/AITUmoment/core_service/internal/adapter/logger"
 	"github.com/a5bbbbb/AITUmoment/core_service/internal/adapter/nats/producer"
+	"github.com/a5bbbbb/AITUmoment/core_service/internal/adapter/redis"
 	"github.com/a5bbbbb/AITUmoment/core_service/internal/services"
 	natsconn "github.com/a5bbbbb/AITUmoment/core_service/pkg/nats"
+	redisconn "github.com/a5bbbbb/AITUmoment/core_service/pkg/redis"
 	"github.com/a5bbbbb/AITUmoment/core_service/pkg/sqlx"
 )
 
@@ -31,6 +33,16 @@ func main() {
 		logger.GetLogger().Panicf("nats.NewClient: %w", err)
 	}
 	logger.GetLogger().Println("NATS connection status is", natsClient.Conn.Status().String())
+
+	// redis client
+	redisClient, err := redisconn.NewClient(context.TODO(), (redisconn.Config)(cfg.Redis))
+	if err != nil {
+		logger.GetLogger().Errorf("redisconn.NewClient: %w", err)
+		return
+	}
+	logger.GetLogger().Println("Redis is connected:", redisClient.Ping(context.TODO()) == nil)
+
+	userRedisCache := redis.NewUser(redisClient, cfg.Cache.UserTTL)
 
 	verifGen := email_verification.NewEmailVerificationGenerator(cfg.LinkGen)
 
@@ -50,6 +62,7 @@ func main() {
 		eduProgramRepo,
 		natsEmailVerification,
 		verifGen,
+		userRedisCache,
 	)
 
 	threadService := services.NewThreadService(threadRepo)

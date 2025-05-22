@@ -4,6 +4,7 @@ import (
 	"time"
 
 	env "github.com/caarlos0/env/v11"
+	"github.com/joho/godotenv"
 )
 
 type (
@@ -62,6 +63,7 @@ type (
 )
 
 func New() (*Config, error) {
+	godotenv.Load()
 	var cfg Config
 	err := env.Parse(&cfg)
 

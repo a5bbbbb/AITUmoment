@@ -9,17 +9,19 @@ import (
 var log *logrus.Logger
 
 func init() {
-	mode, ok := os.LookupEnv("APP_MODE")
+	//mode, ok := os.LookupEnv("APP_MODE")
 
-	if !ok {
-		panic("APP_MODE env is not set")
-	}
+	//if !ok {
+	//	panic("APP_MODE env is not set")
+	//}
 
-	if mode == "DEV" {
-		initDevelopmentLogger()
-	} else if mode == "PROD" {
-		initProductionLogger()
-	}
+	//if mode == "DEV" {
+	//	initDevelopmentLogger()
+	//} else if mode == "PROD" {
+	//	initProductionLogger()
+	//}
+	initDevelopmentLogger()
+
 }
 
 func initDevelopmentLogger() {

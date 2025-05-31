@@ -21,15 +21,11 @@ services:
     env_file: ./core_service/.env
     volumes:
       - /var/log:/app/logs
-    environment:
-      - GRPC_PORT=5001
     depends_on:
       nats:
         condition: service_started
       redis:
         condition: service_healthy
-      # db:
-      #   condition: service_healthy
 
   email_service:
     build:
@@ -55,21 +51,9 @@ services:
       - REDIS_PASSWORD=${REDIS_PASSWORD}
       - REDIS_USER=${REDIS_USER}
       - REDIS_USER_PASSWORD=${REDIS_USER_PASSWORD}
-    # ports:
-    #   - "6380:6379"
     volumes:
       - redis_data:/data
-    # command: >
-    #   sh -c '
-    #     mkdir -p /usr/local/etc/redis &&
-    #     echo "bind 0.0.0.0" > /usr/local/etc/redis/redis.conf &&
-    #     echo "requirepass $REDIS_PASSWORD" >> /usr/local/etc/redis/redis.conf &&
-    #     echo "appendonly yes" >> /usr/local/etc/redis/redis.conf &&
-    #     echo "appendfsync everysec" >> /usr/local/etc/redis/redis.conf &&
-    #     echo "user default on nopass ~* +@all" > /usr/local/etc/redis/users.acl &&
-    #     echo "user $REDIS_USER on >$REDIS_USER_PASSWORD ~* +@all" >> /usr/local/etc/redis/users.acl &&
-    #     redis-server /usr/local/etc/redis/redis.conf --aclfile /usr/local/etc/redis/users.acl
-    #   '
+
     healthcheck:
       test: ["CMD", "redis-cli", "-a", "$REDIS_PASSWORD", "ping"]
       interval: 10s
@@ -78,6 +62,28 @@ services:
     restart: unless-stopped
     tty: true
     stdin_open: true
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    restart: always
+
+  grafana:
+    image: grafana/grafana
+    depends_on:
+      - prometheus
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    ports:
+      - "3000:3000"
+    restart: always
+
 
   # db:
   #   image: postgres:15-alpine
@@ -98,6 +104,8 @@ services:
 volumes:
   postgres_data:
   redis_data:
+  prometheus_data:
+  grafana_data:
 
 configs:
   nats-server.conf:

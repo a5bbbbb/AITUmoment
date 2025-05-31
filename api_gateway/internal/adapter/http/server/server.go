@@ -13,17 +13,19 @@ import (
 	"github.com/a5bbbbb/AITUmoment/api_gateway/internal/services"
 
 	"github.com/gin-gonic/gin"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 const serviceIPAddress = "0.0.0.0:%d"
 
 type API struct {
-	server        *gin.Engine
-	cfg           config.HTTPServer
-	address       string
-	authHandler   *handlers.AuthHandler
-	threadHandler *handlers.ThreadsHandler
-	middleware    *middleware.Middleware
+	server            *gin.Engine
+	cfg               config.HTTPServer
+	address           string
+	authHandler       *handlers.AuthHandler
+	threadHandler     *handlers.ThreadsHandler
+	middleware        *middleware.Middleware
+	apiGatewayMetrics *middleware.ApiGatewayMetrics
 }
 
 func New(cfg config.Server, userService services.UserService, threadService services.ThreadService, groupService services.GroupService, eduProgramService services.EduService) *API {
@@ -39,15 +41,20 @@ func New(cfg config.Server, userService services.UserService, threadService serv
 
 	threadHandler := handlers.NewThreadsHandler(&userService, &eduProgramService, &groupService, &threadService)
 
-	middleware := middleware.NewMiddleware(cfg.HTTPServer.JWTsecret)
+	middlewares := middleware.NewMiddleware(cfg.HTTPServer.JWTsecret)
+
+	gatewayMetrics := middleware.NewApiGatewayMetrics()
+
+	gatewayMetrics.RegisterRoutes()
 
 	api := &API{
-		server:        server,
-		cfg:           cfg.HTTPServer,
-		address:       fmt.Sprintf(serviceIPAddress, cfg.HTTPServer.Port),
-		authHandler:   authHandler,
-		threadHandler: threadHandler,
-		middleware:    middleware,
+		server:            server,
+		cfg:               cfg.HTTPServer,
+		address:           fmt.Sprintf(serviceIPAddress, cfg.HTTPServer.Port),
+		authHandler:       authHandler,
+		threadHandler:     threadHandler,
+		middleware:        middlewares,
+		apiGatewayMetrics: gatewayMetrics,
 	}
 
 	api.setupRoutes()
@@ -56,6 +63,10 @@ func New(cfg config.Server, userService services.UserService, threadService serv
 }
 
 func (a *API) setupRoutes() {
+	a.server.Use(a.apiGatewayMetrics.HttpRequestTotal)
+	a.server.Use(a.apiGatewayMetrics.HttpRequestLatency)
+	a.server.GET("/metrics", gin.WrapH(promhttp.Handler()))
+
 	a.server.GET("/login", a.authHandler.AuthPage)
 	a.server.POST("/login", a.authHandler.Login)
 	a.server.GET("/register", a.authHandler.RegisterPage)

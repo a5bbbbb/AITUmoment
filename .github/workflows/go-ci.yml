@@ -10,7 +10,7 @@ on:
 
 env:
   DOCKER_REGISTRY: docker.io # Docker Hub registry URL
-  DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment/core_service 
+  DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment_core_service 
 
 jobs:
   build-and-test:

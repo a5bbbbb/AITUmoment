@@ -47,4 +47,4 @@ jobs:
         push: true # Set to true to push the image
         tags: |
           ${{ env.DOCKER_IMAGE_NAME }}:latest
-          ${{ env.DOCKER_IMAGE_NAME }}:${{ github.sha }} # Tag with commit SHA for unique versions
+          ${{ env.DOCKER_IMAGE_NAME }}:${{ github.sha }}

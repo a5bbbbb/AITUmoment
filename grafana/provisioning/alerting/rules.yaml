@@ -1,0 +1,162 @@
+apiVersion: 1
+groups:
+    - orgId: 1
+      name: SLO
+      folder: main
+      interval: 1m
+      rules:
+        - uid: deno7jrjhp4hsc
+          title: Uptime
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 900
+                to: 0
+              datasourceUid: bemngvje6gow0b
+              model:
+                adhocFilters: []
+                datasource:
+                    type: prometheus
+                    uid: bemngvje6gow0b
+                disableTextWrap: false
+                editorMode: code
+                expr: up{job="api_gateway"}
+                fullMetaSearch: false
+                includeNullMetadata: true
+                instant: false
+                interval: ""
+                intervalMs: 15000
+                legendFormat: __auto
+                maxDataPoints: 43200
+                range: true
+                refId: A
+                useBackend: false
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params: []
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - B
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 1
+                        type: lt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - C
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          dashboardUid: eemnilmfl3bwgc
+          panelId: 6
+          noDataState: NoData
+          execErrState: Error
+          for: 1m
+          annotations:
+            __dashboardUid__: eemnilmfl3bwgc
+            __panelId__: "6"
+            summary: AITUmoment is down
+          labels:
+            SLO: uptime
+            app: AITUmoment
+          isPaused: false
+          notification_settings:
+            receiver: grafana-default-email
+        - uid: aeno8mwpd7t34b
+          title: Request duration <300ms over 5m check
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 900
+                to: 0
+              datasourceUid: bemngvje6gow0b
+              model:
+                adhocFilters: []
+                datasource:
+                    type: prometheus
+                    uid: bemngvje6gow0b
+                editorMode: code
+                expr: "  sum(rate(http_request_duration_ms_bucket{le=\"300\"}[5m])) by (path)\r\n/\r\n  sum(rate(http_request_duration_ms_count[5m])) by (path) * 100"
+                instant: true
+                interval: ""
+                intervalMs: 15000
+                legendFormat: __auto
+                maxDataPoints: 43200
+                range: false
+                refId: A
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 95
+                        type: lt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - C
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          dashboardUid: eemnilmfl3bwgc
+          panelId: 4
+          noDataState: NoData
+          execErrState: Error
+          for: 1m
+          annotations:
+            __dashboardUid__: eemnilmfl3bwgc
+            __panelId__: "4"
+            summary: Request duration SLO breaking
+          labels:
+            SLO: Duration
+            app: AITUmoment
+          isPaused: false
+          notification_settings:
+            receiver: grafana-default-email

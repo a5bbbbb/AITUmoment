@@ -11,17 +11,15 @@ var log *logrus.Logger
 func init() {
 	mode, ok := os.LookupEnv("APP_MODE")
 
-	if !ok {
-		panic("APP_MODE env is not set")
-	}
-
-	if mode == "DEV" {
-		initDevelopmentLogger()
-	} else if mode == "PROD" {
+	if mode == "PROD" {
 		initProductionLogger()
+		return
 	}
 	initDevelopmentLogger()
 
+	if !ok {
+		log.Warn("APP_MODE env is not set")
+	}
 }
 
 func initDevelopmentLogger() {

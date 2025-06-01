@@ -1,0 +1,31 @@
+name: Go CI
+
+on:
+  push:
+    branches:
+      - microservices-core-service-email-service-with-message-queue 
+  pull_request:
+    branches:
+      - microservices-core-service-email-service-with-message-queue 
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # The type of runner that the job will run on
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4 # Action to check out your repository code
+
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '1.24' 
+
+    - name: Open core_microservice
+      run: cd core_service =
+
+    - name: Tidy Go modules
+      run: go mod tidy # Ensures all dependencies are correctly listed and downloaded
+
+    - name: Run tests
+      run: go test ./... # Runs all tests in your module

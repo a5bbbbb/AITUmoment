@@ -22,7 +22,7 @@ jobs:
         go-version: '1.24' 
 
     - name: Open core_microservice
-      run: cd core_service =
+      run: cd core_service
 
     - name: Tidy Go modules
       run: go mod tidy # Ensures all dependencies are correctly listed and downloaded

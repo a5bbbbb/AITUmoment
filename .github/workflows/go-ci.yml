@@ -22,7 +22,7 @@ jobs:
         go-version: '1.24' 
 
     - name: Tidy Go modules
-      run:  cd core_service; APP_MODE=DEV; go mod tidy # Ensures all dependencies are correctly listed and downloaded
+      run:  cd core_service; go mod tidy # Ensures all dependencies are correctly listed and downloaded
 
     - name: Run tests
-      run:  cd core_service; go test ./internal/test 
+      run:  cd core_service; APP_MODE=DEV; go test ./internal/test 

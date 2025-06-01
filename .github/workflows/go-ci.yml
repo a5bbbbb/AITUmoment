@@ -21,11 +21,8 @@ jobs:
       with:
         go-version: '1.24' 
 
-    - name: Open core_microservice
-      run: cd core_service
-
     - name: Tidy Go modules
-      run: go mod tidy # Ensures all dependencies are correctly listed and downloaded
+      run:  cd core_service; go mod tidy # Ensures all dependencies are correctly listed and downloaded
 
     - name: Run tests
-      run: go test ./... # Runs all tests in your module
+      run:  cd core_service; go test ./... # Runs all tests in your module

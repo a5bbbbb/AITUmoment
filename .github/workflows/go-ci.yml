@@ -10,9 +10,9 @@ on:
 
 env:
   DOCKER_REGISTRY: docker.io # Docker Hub registry URL
-  CORE_SERVICE_DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment/core_service 
-  API_GATEWAY_DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment/api_gateway 
-  EMAIL_SERVICE_DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment/email_service 
+  CORE_SERVICE_DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment_core_service 
+  API_GATEWAY_DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment_api_gateway 
+  EMAIL_SERVICE_DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment_email_service 
 
 jobs:
   build-and-test:

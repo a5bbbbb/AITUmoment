@@ -10,7 +10,9 @@ on:
 
 env:
   DOCKER_REGISTRY: docker.io # Docker Hub registry URL
-  DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment_core_service 
+  CORE_SERVICE_DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment/core_service 
+  API_GATEWAY_DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment/api_gateway 
+  EMAIL_SERVICE_DOCKER_IMAGE_NAME: a5bbbbb/aitu-moment/email_service 
 
 jobs:
   build-and-test:
@@ -39,12 +41,32 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and push Docker image
+    - name: Build and push core_service Docker image
       uses: docker/build-push-action@v5
       with:
         context: .
         file: ./core_service/dockerfile
         push: true # Set to true to push the image
         tags: |
-          ${{ env.DOCKER_IMAGE_NAME }}:latest
-          ${{ env.DOCKER_IMAGE_NAME }}:${{ github.sha }}
+          ${{ env.CORE_SERVICE_DOCKER_IMAGE_NAME }}:latest
+          ${{ env.CORE_SERVICE_DOCKER_IMAGE_NAME }}:${{ github.sha }}
+          
+    - name: Build and push api_gateway Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./api_gateway/dockerfile
+        push: true # Set to true to push the image
+        tags: |
+          ${{ env.API_GATEWAY_DOCKER_IMAGE_NAME }}:latest
+          ${{ env.API_GATEWAY_DOCKER_IMAGE_NAME }}:${{ github.sha }}
+          
+    - name: Build and push email_service Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./email_service/dockerfile
+        push: true # Set to true to push the image
+        tags: |
+          ${{ env.EMAIL_SERVICE_DOCKER_IMAGE_NAME }}:latest
+          ${{ env.EMAIL_SERVICE_DOCKER_IMAGE_NAME }}:${{ github.sha }}

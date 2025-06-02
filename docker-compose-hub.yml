@@ -1,0 +1,101 @@
+services:
+  api_gateway: 
+    image: a5bbbbb/aitu-moment_api_gateway
+    ports:
+      - "8080:8080"
+    env_file: ./api_gateway/.env
+    environment:
+      - GRPC_CORE_SERVICE_URL=core_service:5001
+
+  core_service:
+    image: a5bbbbb/aitu-moment_core_service
+    env_file: ./core_service/.env
+    volumes:
+      - /var/log:/app/logs
+    depends_on:
+      nats:
+        condition: service_started
+      redis:
+        condition: service_healthy
+
+  email_service:
+    image: a5bbbbb/aitu-moment_email_service
+    env_file: ./email_service/.env
+    environment:
+      - GRPC_PORT=5002
+      - NATS_HOSTS=nats:4222
+    depends_on:
+      nats:
+        condition: service_started
+
+  nats:
+    image: nats:latest
+    configs:
+      - nats-server.conf
+  
+  redis:
+    image: redis:latest
+    env_file: ./redis.env
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - REDIS_USER=${REDIS_USER}
+      - REDIS_USER_PASSWORD=${REDIS_USER_PASSWORD}
+    volumes:
+      - redis_data:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "$REDIS_PASSWORD", "ping"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    restart: always
+
+  grafana:
+    image: grafana/grafana
+    depends_on:
+      - prometheus
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    ports:
+      - "3000:3000"
+    restart: always
+
+
+  # db:
+  #   image: postgres:15-alpine
+  #   env_file: .env
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   restart: always
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U aitu -d aitu_moment"]
+  #     interval: 5s
+  #     timeout: 5s
+  #     retries: 2
+  #     start_period: 10s
+      
+
+volumes:
+  postgres_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+
+configs:
+  nats-server.conf:
+    file: ./nats-server.conf
